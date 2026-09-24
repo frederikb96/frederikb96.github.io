@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://frederikb96.github.io/sitemap.xml
+Sitemap: https://blog.frederikberg.net/sitemap.xml
