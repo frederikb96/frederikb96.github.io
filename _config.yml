@@ -1,0 +1,26 @@
+title: "Frederik Berg"
+description: >-
+  Whitepapers and worked-through questions, published so they can be read, cited and checked.
+  Carbon and ecological accounting, complete foods and home cooking, German rail passenger rights.
+lang: en
+url: "https://blog.frederikberg.net"
+
+plugins:
+  - jekyll-sitemap
+
+# LaTeX sources and build inputs stay in the repository but are not served.
+# The built PDFs are, and so is everything under a document's index.md.
+exclude:
+  - README.md
+  - LICENSE
+  - footprints-and-handprints/README.md
+  - footprints-and-handprints/LICENSE
+  - footprints-and-handprints/Makefile
+  - footprints-and-handprints/main.tex
+  - footprints-and-handprints/data
+  - footprints-and-handprints/figures
+  - footprints-and-handprints/scripts
+  - complete-food-and-home-cooking/README.md
+  - complete-food-and-home-cooking/LICENSE
+  - complete-food-and-home-cooking/Makefile
+  - complete-food-and-home-cooking/src

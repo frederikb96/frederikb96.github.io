@@ -1,0 +1,795 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.8cm,right=2.8cm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{xurl}
+\usepackage{microtype}
+\usepackage[english=american]{csquotes}
+
+\definecolor{srcgrey}{gray}{0.42}
+\definecolor{rule}{HTML}{2F4858}
+\definecolor{tint}{HTML}{EEF3F6}
+
+\hypersetup{colorlinks=true, linkcolor=rule, urlcolor=rule, citecolor=rule,
+  pdftitle={Complete Food and Home Cooking},
+  pdfauthor={Frederik Berg}}
+
+\newcommand{\co}{CO\textsubscript{2}e}
+
+\titleformat{\section}{\large\bfseries\color{rule}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.7em}{0.7em}
+
+\setlist[itemize]{topsep=3pt,itemsep=3pt,parsep=0pt,leftmargin=1.2em}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\color{srcgrey}Complete food and home cooking}
+\fancyhead[R]{\footnotesize\color{srcgrey}\thepage}
+\renewcommand{\headrule}{\color{rule}\hrule height0.6pt width\headwidth}
+\setlength{\headheight}{14pt}
+
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\newtcolorbox{keybox}{
+  colback=tint, colframe=rule, boxrule=0.6pt, arc=2pt,
+  left=9pt, right=9pt, top=8pt, bottom=8pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bfseries Complete Food and Home Cooking}\\[0.5em]
+{\large Environmental and health evidence for two ways of eating a vegan diet}\\[1.3em]
+{\normalsize Frederik Berg}\\[0.3em]
+{\footnotesize\color{srcgrey}July 2026}\\[0.5em]
+{\footnotesize\color{srcgrey}Written with AI research and drafting assistance;
+ see the note on sources and method at the end}
+\end{center}
+
+\vspace{0.8em}
+\noindent\textcolor{rule}{\rule{\textwidth}{0.8pt}}
+\vspace{0.6em}
+
+\section*{Summary}
+
+A category of food exists now that did not exist fifteen years ago: powders
+formulated to be a complete diet on their own. Huel, Jimmy Joy, Mana, Soylent.
+Mixed with water they supply calories, protein, fat, fibre and the full set of
+vitamins and minerals in the amounts health authorities recommend, and most of the
+European brands are vegan. Part of the appeal is environmental — nothing spoils,
+portions are exact, no cooking is involved.
+
+Whether that beats simply cooking plant food at home has never been tested in the
+published literature. It comes out close enough that environmental impact is not a
+good reason to pick either one. Both land somewhere between 1 and 3\,kg of \co{}
+per 2000\,kcal, roughly one day of food for one adult. For scale, the same measure
+for a meat-heavy diet is about 10\,kg \cite{scarborough}. Whether someone eats
+plants at all is a factor-of-four decision; which \emph{form} the plants take is a
+factor-of-three decision at most, and much of that three is measurement rather than
+substance.
+
+Four findings sit behind that.
+
+\textbf{There is almost nothing to check.} No independent assessment of any complete
+food has ever been published in a peer-reviewed journal. One manufacturer publishes
+an absolute number; the rest publish either nothing or comparisons with no figures
+underneath them.
+
+\textbf{The footprint is created by refining the ingredients, not by making the
+product.} Whole soybeans carry 1.22\,kg \co{} per kilogram. Turned into protein
+isolate they carry 7.23 — about six times as much, with 84 per cent of it coming
+from the factory rather than the field \cite{cc-spi}. Mixing the finished powders
+together, the step people picture when they imagine industrial food production,
+accounts for 0.2 per cent of the total. The assembly really is nearly free; the
+ingredients arrive expensive.
+
+\textbf{The vitamin blend is not the rounding error it is assumed to be.} A generic
+premix carries 15\,kg \co{} per kilogram — more, per kilogram, than beef. At 2 per
+cent of the product by weight it still contributes roughly a sixth of the ingredient
+footprint, more than the oil and the rice flour combined \cite{cc-premix}.
+
+\textbf{On health, the evidence does not exist yet.} Nobody has followed anyone
+living mainly on one of these products for longer than four weeks. The usual
+objection — that they are ultra-processed — does not transfer cleanly, because the
+health risks attached to that category concentrate in processed meat and sweetened
+drinks rather than in fortified plant products. Meanwhile the diet these products
+compete with has a documented weakness of its own: vegans who do not supplement
+carefully show markedly higher fracture rates.
+
+What follows from all of this is that the format of the food is the wrong lever.
+Four things move the number more than the choice between a shake and a stew: how the
+cooking is powered, how much food gets thrown away, how the shopping gets home, and
+whether the vegetables were grown in a heated greenhouse in winter.
+
+\vspace{0.4em}
+\noindent\textcolor{rule}{\rule{\textwidth}{0.8pt}}
+
+\section{The two things being compared}
+
+A \textbf{complete food} is a powder formulated to supply everything a person needs.
+It keeps for a year at room temperature, requires no cooking, and is normally bought
+online in bulk. The category began with Soylent in 2013 and now includes Huel in the
+UK, Jimmy Joy in the Netherlands, Mana in the Czech Republic, Saturo, YFood and
+others. The products examined here are all vegan.
+
+The comparison is against a \textbf{regional, seasonal, whole-food vegan diet}:
+staples and produce bought in Germany, weighted toward what is in season or in
+domestic cold storage, and cooked at home.
+
+Holding both sides vegan is what makes the question interesting. Removing animal
+products is well established as the dominant lever on dietary footprint, so fixing
+it leaves a narrower question: given that someone eats plants, does the form those
+plants arrive in change anything?
+
+Manufacturers have an obvious commercial interest in the answer, so independent
+databases are preferred wherever both exist, and every manufacturer figure is
+labelled as one.
+
+\section{Why the numbers are hard to compare}
+
+Food footprints come from \textbf{life-cycle assessment} — an accounting method that
+traces every input, from fertiliser and diesel through factory electricity to
+packaging and transport, and adds up the emissions attributable to one unit of
+product. Two choices decide what such an assessment says, and both are easy to get
+wrong.
+
+The first is the \textbf{system boundary}: where the accounting starts and stops.
+Cradle-to-gate stops when the product leaves the factory. Cradle-to-shelf continues
+to the supermarket. Cradle-to-grave includes cooking, refrigeration and waste at
+home. A product measured cradle-to-gate always looks better than the same product
+measured cradle-to-grave, so comparing across boundaries produces nonsense.
+
+The second is the \textbf{functional unit}: what the footprint is expressed per. This
+one decides the answer here. Complete food is a dry powder at about 417\,kcal per
+100\,g. Fresh vegetables are 85 to 95 per cent water. Compare them per kilogram and
+the powder looks roughly ten times better — entirely because of the water. A kilogram
+of powder is four days of food; a kilogram of tomatoes is a side salad. Everything in
+this paper is therefore expressed \textbf{per 2000\,kcal}, and any manufacturer
+figure quoted per kilogram should be treated as uninformative until converted.
+
+Three sources carry the quantitative work. \textbf{Agribalyse 3.1}, from the French
+environment agency, covers whole foods from cradle to shelf and breaks each figure
+down by stage — agriculture, processing, packaging, transport, retail. It is the only
+public database listing seasonal and out-of-season produce separately, which is what
+makes the seasonality question answerable at all \cite{agribalyse}.
+\textbf{CarbonCloud ClimateHub} covers the industrial ingredients Agribalyse does not
+— protein isolates, oil powders, vitamin premixes — at factory gate, each split into
+agriculture, processing, transport and packaging \cite{climatehub}. And
+\textbf{Scarborough and colleagues}, in \emph{Nature Food}, provide the measured
+reference point: the actual diets of 55,504 people, each food linked to a review of
+570 life-cycle assessments covering 38,000 farms in 119 countries
+\cite{scarborough}. That is what people really eat, not a modelled ideal.
+
+Household waste, cooking energy and the trip to the shop are added as separate,
+visible lines rather than folded into the food figure, so any comparison here can be
+re-run at a different boundary.
+
+\section{What the manufacturers publish}
+
+Very little, and almost none of it independently checkable.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}lLL@{}}
+\toprule
+\textbf{Brand} & \textbf{Published product footprint} & \textbf{Verification} \\
+\midrule
+Huel & 0.6\,kg \co{} per 400\,kcal serving, 83\,\% of it from ingredients & Company data, assured to ISO 14064-3:2019; no methodology published \\
+\addlinespace
+Jimmy Joy & None. Reports 103\,t \co{} offset in total & Offsetting, not measurement \\
+\addlinespace
+Mana & None found & --- \\
+\addlinespace
+Soylent & Comparative ratios only, no absolute figure & Company-commissioned, unpublished \\
+\addlinespace
+Saturo, YFood, Feed., Queal & None found & --- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Huel is the outlier and deserves credit for it. The company measures its emissions
+annually at both company and product level and has the result independently assured
+\cite{huel-sustain,huel-nutrition}. Its stated design target is below 0.5\,kg \co{}
+per meal, and its help centre describes the measurement as covering ingredients,
+manufacturing, packaging and delivery \cite{huel-help}.
+
+That assurance is nonetheless weaker than it sounds. The standard used verifies that
+an emissions inventory was compiled correctly. It does not require the company to
+disclose which background database it used, how emissions were divided between
+products, or where the system boundary was drawn. Without those three things an
+outsider cannot reproduce the figure or compare it fairly against a database value.
+
+Jimmy Joy illustrates the more common pattern. Its sustainability page describes
+portion control, a twelve-month shelf life, partly recycled packaging and a
+tree-planting partnership, and states that the company has offset 103 tonnes of \co{}
+in total — which the page itself equates to taking 22 cars off the road for a year
+\cite{jimmyjoy}. None of that is a footprint. Offsetting is a payment made after the
+emissions have happened, and a cumulative 103 tonnes across the life of a company is
+far too small to cover a supply chain that grows and processes ingredients. There is
+no measurement there to examine.
+
+The absence is the single most important methodological fact in this area:
+\textbf{no independent, peer-reviewed assessment of any complete-food product
+exists.} Every quantitative statement about these products, including the ones
+below, is either a manufacturer claim or a reconstruction from ingredient data.
+
+\section{Where the footprint actually comes from}
+
+What determines a formulated food's footprint is how heavily its ingredients were
+refined before they reached the mixer. The effect is large and it is measurable.
+
+Refining means separating one component of a crop from the rest. Milling a grain into
+flour barely counts — the whole seed is still there, just smaller. Pulling the protein
+out of a bean and discarding the rest is heavy refining: it needs water, chemicals to
+shift the acidity so the protein separates, and then a great deal of heat to dry the
+result back into a powder. That energy shows up directly in the footprint.
+
+\begin{center}
+\begin{tcolorbox}[colback=tint,colframe=rule,boxrule=0.6pt,arc=2pt,left=10pt,right=10pt,top=8pt,bottom=8pt,width=0.9\textwidth]
+\centering
+\small
+\textbf{whole soybean} \quad$\longrightarrow$\quad \textbf{soy flour} \quad$\longrightarrow$\quad \textbf{soy protein isolate}\\[0.4em]
+1.22 \hspace{5.0em} 0.64 \hspace{6.4em} \textbf{7.23}\\[0.5em]
+\footnotesize kg \co{} per kg of ingredient. 84\,\% of the last figure is factory energy, not farming.
+\end{tcolorbox}
+\end{center}
+
+The same pattern repeats across every pair that has been measured.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Ingredient} & \textbf{kg \co{} per kg} & \textbf{Share from processing} \\
+\midrule
+Soybean & 1.22 & $\approx$0\,\% \\
+Soybean meal & 0.64 & 21\,\% \\
+Soy protein isolate (90\,\% protein) & \textbf{7.23} & \textbf{84\,\%} \\
+\addlinespace
+Rolled oats & 1.20 & 2\,\% \\
+Oat flour, whole grain & 1.41 & --- \\
+Hydrolysed oat flour & \textbf{4.17} & \textbf{77\,\%} \\
+\addlinespace
+Sunflower oil & 1.73 & 12\,\% \\
+Sunflower oil dried into powder & \textbf{3.13} & \textbf{45\,\%} \\
+\addlinespace
+Pea protein isolate (83\,\% protein) & 3.62 & 60\,\% \\
+Vitamin and mineral premix & \textbf{15.0} & \textbf{100\,\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent All values are CarbonCloud verified product reports, at factory gate
+\cite{cc-spi,cc-oat,cc-sun,cc-pea,cc-premix}.
+
+Grinding is close to free. Extracting a protein or drying an oil onto a carrier is
+not, and the extra cost is process energy rather than agriculture — which means
+sourcing the crop better does not remove it.
+
+This has a consequence neither the manufacturers nor their critics tend to mention:
+\textbf{two products in the same category can differ from each other more than
+either differs from home cooking.} Jimmy Joy's Plenny Shake is built mainly from
+flours, with soy protein isolate appearing only fifth on the ingredient list
+\cite{off-plenny}. Huel Powder is built around pea and rice protein isolates and a
+dried oil. By the table above, a flour-based formulation should sit near the bottom
+of the plausible range and an isolate-based one near the top. No brand publishes
+enough to confirm it.
+
+The vitamin premix deserves separate attention, because the usual assumption about
+it is wrong. It is dismissed on the grounds that the quantities are tiny — micrograms
+of B12, milligrams of most of the rest. That is true of the vitamins and false of the
+premix, which is mostly mineral salts and carrier material and which at 15\,kg \co{}
+per kilogram is more carbon-intensive per kilogram than beef is per kilogram of meat
+\cite{cc-premix}. At roughly 2 per cent of product mass it still contributes about
+0.30\,kg \co{} per kilogram of finished powder. That is a line item, not noise.
+
+\section{Estimating a complete food from its ingredients}
+
+Because no product assessment exists, one has to be built. The method is
+straightforward, and it works because food labelling is regulated: the ingredient
+list must be in descending order by weight and the nutrition panel must be accurate.
+Between the two, find the set of ingredient quantities that reproduces the panel
+while respecting the ordering, then apply the emission factors above.
+
+Plenny Shake declares, per 100\,g: 417\,kcal, 20.8\,g protein, 15.6\,g fat, 43.8\,g
+carbohydrate and 8.6\,g fibre, with the ingredient order oat flour, soy flour,
+sunflower oil, rice flour, soy protein isolate, ground golden flaxseed, inulin,
+vitamin and mineral mix \cite{off-plenny}. The fitted composition reproduces protein,
+fat and fibre to within 2 per cent and carbohydrate to within 9.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Component} & \textbf{g/100\,g} & \textbf{kg \co{}/kg} & \textbf{Contribution} & \textbf{Share} \\
+\midrule
+Oat flour & 52.9 & 1.41 & 0.747 & 40.0\,\% \\
+Soy flour & 30.4 & 1.40 & 0.426 & 22.8\,\% \\
+Vitamin and mineral premix & 2.0 & 15.0 & 0.300 & 16.1\,\% \\
+Soy protein isolate & 2.8 & 7.23 & 0.202 & 10.8\,\% \\
+Sunflower oil & 5.2 & 1.73 & 0.090 & 4.8\,\% \\
+Rice flour & 4.3 & 1.90 & 0.081 & 4.3\,\% \\
+Ground flaxseed & 0.8 & 2.40 & 0.020 & 1.1\,\% \\
+\midrule
+\textbf{Ingredients} & & & \textbf{1.87} & 100\,\% \\
+Dry blending & & & 0.005 & \\
+Multilayer pouch & & & 0.12 & \\
+Parcel delivery, bulk order & & & 0.15 & \\
+\midrule
+\textbf{Total} & & & \textbf{2.14\,kg \co{}/kg} & \\
+\textbf{Per 2000\,kcal} & & & \textbf{1.03\,kg \co{}} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The central estimate is 1.03\,kg \co{} per 2000\,kcal, with a range of 0.86 to 1.31
+across the plausible span of each input.
+
+The line worth pausing on is dry blending at 0.005 — two tenths of one per cent of
+the total. That step is the factory: powders going into a mixer and coming out
+combined. It is the part people picture when they imagine industrial food production,
+and it is almost free. Everything that mattered happened before the ingredients
+arrived.
+
+\subsection{A gap that needs explaining}
+
+This estimate is about a third of Huel's self-reported figure, which works out to
+3.0\,kg \co{} per 2000\,kcal. The discrepancy is larger than the difference the whole
+exercise is trying to measure, so it cannot be left alone.
+
+Part of it is the recipe. Re-running the same model on a Huel-like formulation — oats,
+pea protein isolate, flaxseed, rice protein, dried oil — gives roughly 1.4 to 1.5\,kg
+\co{} per 2000\,kcal, because isolates and oil powders replace flours. That closes
+perhaps half the gap.
+
+The most plausible explanation for the rest is that the figure is not measuring what
+it appears to measure. A company can count its emissions two ways: it can assess the
+product, or it can total up the whole business — offices, staff travel, marketing,
+servers, equipment — and divide by meals sold. The second number is always bigger.
+Huel reports carbon intensity per pound of revenue alongside the per-meal figure
+\cite{huel-sustain}, and revenue intensity is a whole-business measure rather than a
+product one.
+
+If that reading is right, the manufacturer's number is conservative rather than
+flattering — which is unusual enough to be worth stating, because the reflexive
+assumption about company sustainability figures runs the other way. It remains a
+hypothesis; no published methodology would settle it. Both figures are carried into
+the comparison below.
+
+\section{The home-cooked side}
+
+Built the same way, from the same databases, so that the two sides can be compared
+without adjusting for method. Two days of food were constructed at 2000\,kcal each:
+one optimised around German seasonal and stored produce in winter, one reflecting an
+ordinary vegan shop including imported and greenhouse items.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+& \textbf{A: optimised} & \textbf{B: ordinary} \\
+& \textbf{regional and seasonal} & \textbf{imported + greenhouse} \\
+\midrule
+Food, cradle-to-shelf & 1.14 & 1.47 \\
+Food thrown away at home & +0.14 & +0.22 \\
+Cooking and refrigeration & +0.57 & +0.57 \\
+Trip to the shop & +0.15 & +0.30 \\
+\midrule
+\textbf{As eaten, per 2000\,kcal} & \textbf{1.99} & \textbf{2.55} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three results here matter more than the totals.
+
+\textbf{Seasonality is a large effect, and it is about heating, not distance.}
+Agribalyse prices a seasonal tomato at 0.626\,kg \co{} per kilogram and an
+out-of-season one at 2.114 — a factor of 3.4 \cite{agribalyse}. The stage breakdown
+shows where that comes from: the agricultural stage rises from 0.222 to 1.670 while
+transport barely moves, from 0.298 to 0.338. The penalty is the heated greenhouse. In
+basket B a single 200\,g portion of out-of-season tomato contributes 0.43\,kg \co{},
+which is the largest single line in the day and more than all the grain in it put
+together. Buying that tomato in summer instead of February takes about a fifth off
+the footprint of the whole day's food. Nothing else on the shopping list comes close.
+
+\textbf{Transport is a large share of a small number, which is why food miles
+mislead.} For apples, transport is 64 per cent of the cradle-to-shelf footprint — but
+that footprint is 0.408\,kg \co{} per kilogram in total. For dried lentils it is 42
+per cent of 0.582. The share is high precisely because growing plants is cheap; there
+is little else in the number for transport to compete with, so optimising it yields
+very little in absolute terms.
+
+This reconciles two studies usually presented as contradicting each other. One found
+transport at 11 per cent of food-related emissions, with final delivery from producer
+to retailer at 4 \cite{weber}. A later one put global food transport near 19 per cent
+\cite{li}. The higher figure counts all transport anywhere in the chain — fertiliser
+moving to farms, feed to livestock, machinery to dealers — rather than only finished
+food moving to a shop. For someone standing in front of two apples, the lower figure
+is the relevant one.
+
+\textbf{Cooking energy is the largest non-food line, and most published comparisons
+leave it out.} At 0.57\,kg \co{} per day it is half the footprint of the food itself
+in basket A. It is also the one place where a powder mixed with cold tap water has an
+unambiguous structural advantage, along with waste: a sealed pouch with measured
+scoops does not go off at the back of a fridge.
+
+For calibration against reality, the measured average UK vegan diet is 2.47\,kg \co{}
+per 2000\,kcal, with a 95 per cent uncertainty interval of 2.09 to 3.36
+\cite{scarborough}. That figure stops at the retail shelf, so it belongs beside the
+1.14 and 1.47 rows rather than beside the totals, and it sits above both modelled
+baskets — which is expected, because real diets include plant milks, meat
+substitutes, coffee, chocolate, snacks and alcohol that a staples-only model leaves
+out. Germany's environment agency independently arrives at about 2.85\,kg per day for
+a vegan diet with partly regional, seasonal and organic sourcing \cite{uba-food}.
+
+\section{Side by side}
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}LrL@{}}
+\toprule
+\textbf{Option} & \textbf{kg \co{} per 2000\,kcal} & \textbf{Basis} \\
+\midrule
+Complete food, built up from ingredients & 1.03 \; (0.86--1.31) & Reconstructed from verified ingredient factors \\
+Optimised regional and seasonal winter day & 1.99 & Agribalyse plus German grid \\
+Ordinary vegan day & 2.55 & Agribalyse plus German grid \\
+Measured average UK vegan diet & 2.47 \; (2.09--3.36) & Scarborough 2023, stops at retail \\
+Complete food, manufacturer figure & 3.00 & Company figure, methodology unpublished \\
+\addlinespace
+\emph{For scale: measured UK high-meat diet} & \emph{10.24 \; (7.04--15.95)} & \emph{Scarborough 2023, stops at retail} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Everything in the plant-based block lands between 1.0 and 3.0. The meat-heavy
+reference sits at 10.24. Moving from a meat-heavy diet to any vegan pattern is a
+factor of four; every choice available \emph{within} the vegan block is a factor of
+three at most, and a good part of that three is measurement rather than substance.
+
+Two rows are not strictly comparable and are marked as such. The measured figures stop
+at the retail shelf while the two baskets and the reconstruction run through to
+consumption. Comparing like with like, the food-only numbers are 1.14 for the
+optimised basket, 1.47 for the ordinary one, 2.47 for the measured average and about
+0.90 for the complete food. On that basis the complete food is ahead — but by a margin
+comfortably inside the uncertainty of a reconstruction that had to infer its own
+recipe.
+
+\section{Impacts other than carbon}
+
+Carbon is the only indicator any complete-food manufacturer reports. None publishes
+land use, water scarcity, nutrient pollution or biodiversity impact. That is a gap,
+not a clean bill of health.
+
+What can be said from ingredient data is directional. The formulation is dominated by
+oats and soy, which are land-hungry per kilogram compared with vegetables but
+efficient per calorie. Agribalyse gives oat flakes 214\,m\textsuperscript{2}$\cdot$year
+of land per kilogram against carrots at 9.54 — but oats deliver about 380\,kcal per
+100\,g and carrots about 40, so per calorie the ranking reverses \cite{agribalyse}.
+This is the functional-unit trap from Section~2 running in the other direction, and a
+reminder that a single number without its unit is not evidence of anything.
+
+Two effects favour the complete food structurally and are not speculative. Household
+waste for a shelf-stable powder in pre-measured servings is effectively zero, against
+fresh fruit and vegetables making up around a third of avoidable household food waste
+in Germany. And packaging per calorie is low, because the product is dehydrated —
+although multilayer laminate pouches are in practice not mechanically recycled in
+Germany and go to energy recovery, a circularity failure the carbon number does not
+capture.
+
+One effect runs the other way. Ready-to-drink versions ship roughly five times the
+mass per calorie, because they ship water, and they need rigid bottles rather than
+flexible pouches. The choice between powder and ready-to-drink within the category
+plausibly matters more than the choice between the category and cooking.
+
+\section{Health}
+
+The environmental question comes out close. The health question is genuinely
+unresolved, and the reason is an absence of evidence rather than a balance of it.
+
+\subsection{What is not known}
+
+No trial or cohort study has followed healthy, weight-stable adults getting most of
+their calories from a complete food for longer than four weeks. The longest published
+study is a single-arm, industry-funded pilot with twenty people who finished it.
+
+The large body of research on meal replacements does not fill that gap. Those trials
+use meal replacements for deliberate weight loss in people with obesity or type 2
+diabetes — a different intervention, in a different population, at a different calorie
+level.
+
+Specific unknowns worth naming rather than glossing over: long-term effects on teeth
+and chewing muscles from a mainly liquid diet, appetite regulation over months, what
+low fibre variety does to the gut microbiome, and how well minerals are actually
+absorbed from an oat and soy matrix, which is high in phytate — a compound in seeds and
+grains that binds iron and zinc and reduces uptake. That last question has never been
+measured in these products.
+
+\subsection{The ultra-processed food question}
+
+Complete foods fall squarely into the category most nutrition research now calls
+ultra-processed. That category has an unfavourable reputation, and at first glance the
+evidence supports it: a 2024 review pooling 45 analyses found higher intake associated
+with a 21 per cent higher risk of dying from any cause, a 50 per cent higher risk of
+cardiovascular death, and raised risks of type 2 diabetes and depression
+\cite{bmj-upf}. Only two of those estimates reached moderate certainty on the standard
+grading scale; most remained low or very low, which is normal for observational
+nutrition research.
+
+The problem is what the category contains. Processed meat, soft drinks, confectionery
+and a fortified vegan shake all sit in the same bucket, and a large European study
+shows they do not behave alike. Across 266,666 participants followed for a median of
+11.2 years, higher intake did raise the risk of cancer and cardiometabolic disease —
+but the effect concentrated in animal-based products and sweetened drinks, while
+ultra-processed breads and cereals and plant-based alternatives showed no detectable
+association at all \cite{epic-upf}. Complete foods belong to the second group by
+composition.
+
+The strongest evidence on the other side is the only randomised trial that isolates
+processing itself. Twenty weight-stable adults lived in a research ward and ate an
+ultra-processed diet for two weeks and an unprocessed one for two weeks, in random
+order. The two menus were matched for calories offered, energy density, protein, fat,
+carbohydrate, sugar, salt and fibre, so the only difference was processing. On the
+ultra-processed diet people ate 508\,kcal a day more without being asked to and gained
+0.9\,kg; on the unprocessed diet they lost 0.9\,kg \cite{hall}.
+
+That is causal evidence that processing drives overeating regardless of nutrient
+content. How far it transfers is arguable in both directions — the menu in that trial
+was conventional packaged food, not a fortified formulation, but the mechanism
+identified, eating faster with less satiety per calorie, applies at least as strongly
+to something drinkable. Nobody has run the experiment with a complete food.
+
+\subsection{The risk on the other side}
+
+It is easy to treat home-cooked vegan food as the safe default. The data does not
+entirely support that.
+
+In a cohort of at least 54,898 people followed for an average of 17.6 years, vegans
+had 2.31 times the hip-fracture rate of meat eaters, with a 95 per cent confidence
+interval of 1.66 to 3.22. In absolute terms that is 14.9 additional hip fractures per
+1000 people over ten years. Total fracture risk was also raised, at 1.43
+\cite{epic-fracture}. The associations weakened but persisted after adjusting for
+dietary calcium and protein, which points at intake adequacy rather than at anything
+intrinsic to plant food.
+
+Micronutrient status tells the same story from another angle. Vitamin B12 is the
+familiar case; iodine, selenium, zinc and long-chain omega-3 fats are the
+less-discussed ones, and in European populations — where soils are low in selenium and
+salt is not routinely iodised — they are not rare deficiencies.
+
+This is the honest case in favour of complete food, and it is stronger than the
+environmental one. A product supplying calcium, vitamin D, B12, iodine, selenium, zinc
+and algal omega-3 at reference levels removes, by construction, the exact failure the
+fracture data points at. Whether it does so in practice has never been tested, and
+\enquote{should eliminate} is not \enquote{eliminates}.
+
+\subsection{Contaminants}
+
+Plant proteins concentrate heavy metals from soil more than animal proteins do, and
+organic sourcing tends to increase rather than reduce cadmium and lead uptake.
+Exceedances of California's Proposition 65 thresholds are common in commercial protein
+powders, though those thresholds are far stricter than European limits and presence at
+those levels is not evidence of harm.
+
+The consideration is real for a product eaten daily in quantity rather than
+occasionally, and it is a place where the varied diet has a genuine advantage: eating
+many different plants dilutes any single contaminated input.
+
+\section{The strongest objection}
+
+The case against the conclusion runs like this. The comparison flatters complete food,
+because the home-cooked baskets carry cooking, shopping and waste while the powder
+carries none of them. Those three lines are 0.86 of the 1.99\,kg optimised total —
+nearly half. Strip them out and the food itself is 1.14 against about 0.90, close to
+parity and well inside the error bars of a reconstruction built on an inferred recipe.
+
+That objection is correct, and it is the conclusion rather than a refutation of it.
+The lines are not an artefact; they are real emissions a powder user genuinely does
+not produce. But their size relative to the food is the point. What separates these
+two options is not the food, it is everything around the food. Someone who cooks on an
+induction hob with renewable electricity, shops by bicycle and wastes nothing has
+already closed the gap without changing what they eat.
+
+A second objection is that the reconstruction is the weakest number here and is doing
+the most work. Also correct. The recipe is inferred rather than disclosed, the emission
+factors come from a commercial database rather than peer review, and the only
+manufacturer figure available disagrees with it threefold. It is presented as the
+better estimate because its inputs are individually checkable and the manufacturer's
+are not. A published product assessment would supersede it immediately.
+
+\section{Established, likely, unknown}
+
+\textbf{Established.} Refining, not manufacturing, drives the footprint of formulated
+foods: soy protein isolate costs about six times its parent bean, 84 per cent of that
+from processing. Seasonality is a factor of 3.4 for greenhouse-sensitive produce,
+driven by heating rather than distance. Transport is a large share of a small absolute
+number for plant foods. Cooking energy is a major line and is usually omitted. Vegan
+diets of any construction come to roughly a quarter of a meat-heavy diet's footprint.
+Vegans who do not supplement carefully carry a measured, substantial excess fracture
+risk.
+
+\textbf{Likely.} Complete food probably has a modestly lower as-eaten carbon footprint
+than home cooking, driven mainly by zero cooking energy and zero waste rather than by
+the food itself. The vitamin premix is a real contributor at roughly a sixth of the
+ingredient footprint. Flour-based formulations are materially lighter than
+isolate-based ones. The health risks attached to ultra-processed food probably do not
+transfer wholesale to fortified plant formulations — though this rests on subgroup
+analysis rather than direct study.
+
+\textbf{Unknown.} Any peer-reviewed assessment of a complete-food product. The system
+boundary behind the one published manufacturer figure. Land, water, nutrient-pollution
+and biodiversity impacts of any of them. Health outcomes beyond four weeks. How well
+minerals are absorbed from a high-phytate formulated matrix. Whether fortification
+removes the fracture risk it appears designed to remove. Long-term effects on the gut
+microbiome, appetite and oral health.
+
+\section{Conclusion}
+
+Environmental impact is not a good basis for choosing between these two ways of eating.
+Both sit in the 1 to 3\,kg \co{} band per 2000\,kcal, and the levers that actually move
+the number — avoiding out-of-season greenhouse produce, not wasting food, not driving to
+the shop, and how the cooking is powered — cut across both.
+
+The intuition that centralising production and adding all the vitamins at once must be
+efficient is half right. The assembly really is nearly free: mixing the powders is 0.2
+per cent of the product's footprint. But the ingredients arriving at that mixer have
+been refined, and refining is where the energy went. Central manufacturing does not
+escape that cost; it depends on it.
+
+On health the position is not a tie but a blank. There is no long-term evidence in
+either direction, and reading that blank as reassurance is as wrong as reading it as
+alarm. What is documented is that the whole-food vegan diet has a measurable failure
+mode — micronutrient adequacy, with fracture risk as its visible endpoint — that a
+fortified product is designed to solve and has never been shown to solve.
+
+Conditionally, then. Where the motivation is environmental, the evidence does not
+support switching, and the same effort spent on seasonality, waste and cooking energy
+would achieve more. Where the motivation is convenience, cost or reliable micronutrient
+coverage, the environmental evidence neither supports nor blocks it — and partial
+substitution captures most of the waste and cooking-energy advantage while keeping the
+dietary variety whose long-term value is, unlike most of the above, not seriously
+disputed.
+
+\section*{Appendix: basket composition}
+
+Both baskets normalised to 2000\,kcal. Emission factors are Agribalyse 3.1
+cradle-to-shelf values in kg \co{} per kg; the last column is the resulting per-day
+contribution. Waste, cooking and shopping are added on top of these subtotals as shown
+in Section~6. Cooking assumes 1.6\,kWh per day at the German grid factor of 0.353\,kg
+\co{} per kWh.
+
+\vspace{0.4em}
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\footnotesize
+\textbf{A: optimised regional and seasonal winter day}\\[0.3em]
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Item & g & Factor & kg \co{} \\
+\midrule
+Potatoes & 350 & 0.788 & 0.276 \\
+Rye/wheat bread & 180 & 0.760 & 0.137 \\
+Oat flakes & 100 & 1.220 & 0.122 \\
+Kale & 150 & 0.713 & 0.107 \\
+Walnuts & 25 & 4.110 & 0.103 \\
+Sauerkraut & 100 & 0.700 & 0.070 \\
+Rapeseed oil & 25 & 2.500 & 0.062 \\
+Apple, stored & 150 & 0.408 & 0.061 \\
+Leek & 100 & 0.611 & 0.061 \\
+Carrots & 150 & 0.396 & 0.059 \\
+Beetroot & 100 & 0.408 & 0.041 \\
+Lentils, dry & 70 & 0.581 & 0.041 \\
+\midrule
+\textbf{Subtotal} & & & \textbf{1.14} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\footnotesize
+\textbf{B: ordinary day, imported and greenhouse}\\[0.3em]
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Item & g & Factor & kg \co{} \\
+\midrule
+Tomato, off-season & 200 & 2.114 & 0.433 \\
+Rice, dry & 80 & 2.015 & 0.165 \\
+Tofu & 150 & 1.000 & 0.154 \\
+Banana & 150 & 0.909 & 0.140 \\
+Bread & 150 & 0.760 & 0.117 \\
+Walnuts & 25 & 4.110 & 0.105 \\
+Oat flakes & 80 & 1.220 & 0.100 \\
+Cucumber & 150 & 0.512 & 0.079 \\
+Strawberry, off-season & 100 & 0.592 & 0.061 \\
+Sunflower oil & 25 & 2.358 & 0.060 \\
+Chickpeas, dry & 60 & 0.899 & 0.055 \\
+\midrule
+\textbf{Subtotal} & & & \textbf{1.47} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\vspace{1.0em}
+\noindent\textcolor{rule}{\rule{\textwidth}{0.6pt}}
+\vspace{0.3em}
+
+{\footnotesize\color{srcgrey}
+\textbf{Data and method.} Agribalyse 3.1 queried through the ADEME data API, July
+2026. CarbonCloud ClimateHub product reports and manufacturer pages read directly,
+July 2026. Recipe fitting by constrained random search over the simplex, minimising
+squared relative error against the declared nutrition panel subject to the declared
+ingredient ordering. All effect sizes and confidence intervals were checked against
+the primary publications rather than against secondary summaries. Uncertainty ranges
+reflect the span of published emission factors for each ingredient, not a formal
+propagation. Research and drafting were carried out with assistance from Claude
+(Anthropic); every source cited was retrieved and checked against the primary
+document, and responsibility for the content rests with the author.}
+
+\begin{thebibliography}{99}
+\footnotesize
+
+\bibitem{scarborough} Scarborough, P. et al. \emph{Vegans, vegetarians, fish-eaters and meat-eaters in the UK show discrepant environmental impacts.} Nature Food, 2023. \url{https://www.nature.com/articles/s43016-023-00795-w} (open version: \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC10365988/})
+
+\bibitem{agribalyse} ADEME. \emph{Agribalyse 3.1 -- synthèse.} \url{https://data.ademe.fr/datasets/agribalyse-31-synthese}
+
+\bibitem{climatehub} CarbonCloud. \emph{ClimateHub product reports.} \url{https://apps.carboncloud.com/climatehub}
+
+\bibitem{cc-spi} CarbonCloud ClimateHub. \emph{Soy protein isolate, verified product report.} \url{https://apps.carboncloud.com/climatehub/product-reports/id/96565698940}
+
+\bibitem{cc-oat} CarbonCloud ClimateHub. \emph{Oat flour products, verified product report.} \url{https://apps.carboncloud.com/climatehub/product-reports/id/385367484644}
+
+\bibitem{cc-sun} CarbonCloud ClimateHub. \emph{Sunflower oil products, verified product report.} \url{https://apps.carboncloud.com/climatehub/product-reports/id/8670992232269}
+
+\bibitem{cc-pea} CarbonCloud ClimateHub. \emph{Pea protein isolate, verified product report.} \url{https://apps.carboncloud.com/climatehub/product-reports/id/2282851493418}
+
+\bibitem{cc-premix} CarbonCloud ClimateHub. \emph{Vitamin and mineral premix, verified product report.} \url{https://apps.carboncloud.com/climatehub/product-reports/id/186640392289}
+
+\bibitem{off-plenny} Open Food Facts. \emph{Plenny Shake, Jimmy Joy -- ingredients and nutrition panel.} \url{https://world.openfoodfacts.org/product/8720165350995/plenny-shake-jimmy-joy}
+
+\bibitem{huel-nutrition} Huel. \emph{Sustainability nutrition facts.} \url{https://de.huel.com/pages/huel-sustainability-nutrition-facts}
+
+\bibitem{huel-sustain} Huel. \emph{Sustainability.} \url{https://huel.com/pages/sustainability-page}
+
+\bibitem{huel-help} Huel Help Centre. \emph{What is Huel's carbon footprint per meal?} \url{https://intercom-help.eu/uk-help-centre-huel/en/articles/633648-what-is-huel-s-carbon-footprint-per-meal}
+
+\bibitem{jimmyjoy} Jimmy Joy. \emph{How sustainable is Jimmy Joy?} \url{https://jimmyjoy.com/pages/how-sustainable-is-jimmy-joy}
+
+\bibitem{uba-food} Umweltbundesamt. \emph{Klimafreundliche Ernährung.} \url{https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/klimafreundliche-ernaehrung-fleischreduziert}
+
+\bibitem{weber} Weber, C.L., Matthews, H.S. \emph{Food-miles and the relative climate impacts of food choices in the United States.} Environmental Science \& Technology, 2008. \url{https://pubs.acs.org/doi/10.1021/es702969f}
+
+\bibitem{li} Li, M. et al. \emph{Global food-miles account for nearly 20\% of total food-systems emissions.} Nature Food, 2022. \url{https://www.nature.com/articles/s43016-022-00531-w}
+
+\bibitem{bmj-upf} Lane, M.M. et al. \emph{Ultra-processed food exposure and adverse health outcomes: umbrella review of epidemiological meta-analyses.} BMJ, 2024. \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC10899807/}
+
+\bibitem{epic-upf} Cordova, R. et al. \emph{Consumption of ultra-processed foods and risk of multimorbidity of cancer and cardiometabolic diseases.} The Lancet Regional Health -- Europe, 2023. \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC10730313/}
+
+\bibitem{hall} Hall, K.D. et al. \emph{Ultra-processed diets cause excess calorie intake and weight gain: an inpatient randomized controlled trial of ad libitum food intake.} Cell Metabolism, 2019. \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC7946062/}
+
+\bibitem{epic-fracture} Tong, T.Y.N. et al. \emph{Vegetarian and vegan diets and risks of total and site-specific fractures: results from the prospective EPIC-Oxford study.} BMC Medicine, 2020. \url{https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-020-01815-3}
+
+\end{thebibliography}
+
+\end{document}

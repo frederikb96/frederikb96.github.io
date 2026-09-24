@@ -1,0 +1,13 @@
+# Frederik Berg
+
+> Whitepapers and worked-through questions, each published because the answer was hard to
+> assemble and is not written down anywhere else in a citable form. Every factual claim
+> carries a source, and the sources were read rather than summarised. Topics: carbon and
+> ecological accounting, the footprint of complete foods against home cooking, German rail
+> passenger rights.
+
+## Documents
+
+- [Footprints and Handprints](https://blog.frederikberg.net/footprints-and-handprints/): carbon and ecological accounting. Why one country has several equally correct per-capita footprint figures depending on production- versus consumption-based accounting and land-use inclusion; how a personal footprint is computed; where a product's system boundary falls; why the ecological footprint in global hectares is largely a carbon number in an area unit; why a handprint (avoided emissions enabled elsewhere) cannot be netted against a footprint. Data from the Global Footprint Network National Footprint and Biocapacity Accounts and Our World in Data. Full paper as PDF.
+- [Complete Food and Home Cooking](https://blog.frederikberg.net/complete-food-and-home-cooking/): environmental footprint and health evidence of vegan complete foods (Huel, Jimmy Joy, Mana) against a regional, seasonal, whole-food vegan diet in Germany. Both land around 1–3 kg CO₂e per 2000 kcal against about 10 kg for a meat-heavy diet; the spread within each option exceeds the gap between them; ingredient refinement rather than manufacturing drives a complete food's footprint, with dry blending at 0.2 % of the total and soy protein isolate costing about six times its parent bean. Data from Agribalyse 3.1, CarbonCloud ClimateHub and Scarborough et al. 2023. Full paper as PDF.
+- [Aufgehobene Zugbindung und die Alternative im DB Navigator](https://blog.frederikberg.net/bahn-zugbindung-alternative/) (German; [English](https://blog.frederikberg.net/bahn-zugbindung-alternative/en/)): when the DB Navigator app declares a booked connection unreachable and the passenger selects an alternative, there is no duty to re-check before changing trains whether the original connection became reachable again. The right attaches to the forecast at the moment of announcement, not to how operations developed. Clause 9.1.4 of Deutsche Bahn's Beförderungsbedingungen names DB's own timetable information service as a sufficient announcement channel and its stored transfer times as the yardstick for reachability. Clauses 9.1.1 and 9.1.4 quoted verbatim, with the counter-argument and the limits.

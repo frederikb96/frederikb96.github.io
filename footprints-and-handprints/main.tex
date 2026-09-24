@@ -1,0 +1,829 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage{microtype}
+\usepackage[a4paper,top=2.6cm,bottom=2.6cm,left=2.9cm,right=2.9cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[font=small,labelfont=bf,skip=6pt]{caption}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{xurl}
+\usepackage[english=american]{csquotes}
+
+\definecolor{accent}{HTML}{0072B2}
+\definecolor{panel}{HTML}{F4F6F8}
+\definecolor{rule}{HTML}{C8CDD2}
+
+\hypersetup{colorlinks=true, linkcolor=accent, urlcolor=accent, citecolor=accent,
+  pdftitle={Footprints and Handprints},
+  pdfauthor={Frederik Berg}}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.7em}{}
+\titlespacing*{\section}{0pt}{17pt plus 3pt minus 2pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt plus 2pt minus 2pt}{4pt}
+
+\setlist[itemize]{leftmargin=1.2em, topsep=3pt, itemsep=3pt, parsep=0pt}
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+\linespread{1.03}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\color{gray}Footprints and Handprints}
+\fancyhead[R]{\footnotesize\color{gray}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{rule}\hrule height 0.4pt width\headwidth}
+
+\newtcolorbox{keybox}{
+  colback=panel, colframe=rule, boxrule=0.5pt, arc=1.5pt,
+  left=9pt, right=9pt, top=8pt, bottom=8pt}
+
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.88}
+\setlength{\floatsep}{11pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{13pt plus 2pt minus 3pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+
+\newcommand{\fig}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.94\linewidth]{figures/#1}
+    \caption{#2}
+    \label{fig:#3}
+  \end{figure}}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+  {\LARGE\bfseries Footprints and Handprints\par}
+  \vspace{5pt}
+  {\large How carbon and ecological accounting work,\\
+   and how to read the numbers they produce\par}
+  \vspace{11pt}
+  {\small Frederik Berg \quad·\quad July 2026}\\[5pt]
+  {\footnotesize\color{gray}Written with AI research and drafting assistance;
+   see the note on sources and method at the end}
+\end{center}
+
+\vspace{5pt}
+\hrule height 0.8pt
+\vspace{15pt}
+
+\section*{Summary}
+
+Ask how large one country's carbon footprint is per person and you get several
+different answers, all of them correct. For Germany the published figures run
+from 6.8 to 10.4 tonnes a year. They differ because they answer different
+questions: what is emitted inside the border, which gases are counted, whether
+goods bought from abroad are included, and whether each resident is charged a
+share of roads, hospitals and public administration. A footprint figure quoted
+without those four properties cannot be compared with anything.
+
+Two measurements share the word \enquote{footprint} and are not versions of each
+other. The carbon footprint is a weight of greenhouse gases. The ecological
+footprint is an area of productive land and sea, and it converts carbon dioxide
+into the forest area that would be needed to absorb it. That conversion turns out
+to dominate: about 60 per cent of the ecological footprint is the carbon term, and
+the other five components have barely moved in sixty years. The metric works as a
+way to show that consumption exceeds what the planet regenerates. It does not work
+for choosing between two courses of action, because the assumption inside its
+largest component moves the answer more than the options being compared.
+
+For an individual product, what gets counted depends on the method. Tracing a
+supply chain step by step is precise about what it includes and has to stop
+somewhere, typically before the factory building and the machines, which
+understates the total by twenty to fifty per cent. Working from the whole economy
+instead misses nothing, because every purchase a company ever made is recorded
+somewhere, but it treats everything within an industry as identical. Both are
+standard; they fail in opposite directions.
+
+The handprint counts emissions avoided at other people rather than emissions
+caused. It exists because a personal footprint cannot show the largest thing an
+individual does — persuading a landlord, an employer or a council to change
+something structural. Unlike a footprint it is deliberately not exclusive: two
+people can claim the same avoided tonne, so the sum of everyone's handprints can
+exceed the emissions that exist. That makes it useful for describing influence and
+invalid to subtract from a footprint.
+
+\vspace{4pt}
+\hrule height 0.4pt
+
+\section{Two measurements, one word}
+
+The \textbf{carbon footprint} is a weight. It counts greenhouse gases and reports
+them in tonnes of carbon dioxide equivalent, written t\,CO$_2$e. Methane and
+nitrous oxide are converted into the amount of CO$_2$ that would cause the same
+warming over a hundred years, so everything lands in one unit. Climate targets are
+written in this unit, which is why it is the one that matters when a decision
+depends on the answer. The rules for measuring a product this way are set by
+ISO~14067, a narrowing of the general life-cycle assessment standards to the single
+question of climate impact \cite{iso14067,iso14040,iso14044}.
+
+The \textbf{ecological footprint} is an area. It asks how much biologically
+productive land and sea a population needs — to grow its food, catch its fish, cut
+its timber, stand its buildings on, and absorb its carbon dioxide — and reports the
+answer in global hectares, a hectare of world-average productivity. That demand is
+compared against \emph{biocapacity}, the productive surface actually available. The
+accounts, developed by Mathis Wackernagel and William Rees and now maintained by
+the Global Footprint Network with York University, track six categories: cropland,
+grazing land, forest products, fishing grounds, built-up land, and the forest area
+needed to absorb emissions \cite{gfn-data}.
+
+Neither number contains the other, and neither converts into the other. The
+ecological footprint does have a carbon term inside it, but that term is not the
+emissions — it is a hypothetical forest that would have to exist to absorb them.
+The carbon footprint, in turn, says nothing about cropland or fisheries. The two
+figures for one country in one year can move in opposite directions.
+
+\begin{keybox}
+A carbon footprint asks how much something warmed the planet. An ecological
+footprint asks how much of the planet's productive surface it occupied. Only the
+first is denominated in the quantity climate targets are set in.
+\end{keybox}
+
+\section{Why one country has four different numbers}
+
+Germany is a useful case because all four variants are published, and the gap
+between them is larger than most of the differences people argue about.
+
+The narrowest counts only what is physically emitted inside the border, and only
+carbon dioxide: 6.77 tonnes per person in 2024 \cite{owid-co2}. Add the other
+greenhouse gases — agricultural methane, nitrous oxide from fertiliser,
+refrigerant gases — and the same territorial basis gives 649 million tonnes for
+2025, which across 83.5 million residents is 7.8 tonnes each
+\cite{uba-thg,destatis-pop}. This is the number national climate law is written
+against; Germany's legal targets are at least 65 per cent below 1990 by 2030 and
+net zero by 2045 \cite{uba-ziele}.
+
+Now correct for trade. Subtract the emissions caused by things Germany makes and
+sells abroad, add the emissions caused abroad by things Germany buys, and the
+figure rises to 9.09 tonnes of CO$_2$ per person for 2023, against 7.02 tonnes
+territorial in the same year \cite{owid-co2,owid-cons}. Roughly three tonnes of
+every ten a German resident is responsible for are released outside Germany.
+
+Finally the figure consumer calculators show: 10.4 tonnes. It is trade-corrected,
+counts all greenhouse gases, adds the extra warming aircraft cause at altitude,
+and gives every resident an equal share of emissions from public administration,
+health, education, water, waste and civil engineering \cite{greenpeace,uba-rechner}.
+
+\fig{f2-four-numbers}{The same country, four accounting rules, no measurement
+error. The note under each bar states what that rule includes.}{four}
+
+\subsection{A share is not a footprint}
+
+Dividing a country's total emissions by its population produces a share, and a
+share is a different object from a footprint. It includes emissions from factories
+producing goods for export that no resident ever touches, and excludes emissions
+from a factory abroad producing something a resident bought last week.
+
+It also hands everyone the same value, which is wrong in a way worth quantifying:
+in Germany the lowest-emitting tenth of the population sits near 7 tonnes and the
+highest-emitting tenth near 17.7, more than half again above the national average
+\cite{uba-frage}.
+
+\fig{f3-trade-gap}{Germany's emissions inside its border have fallen faster than
+the emissions caused by German consumption. The shaded band is the part released
+abroad. Data: Our World in Data and the Global Carbon Project \cite{owid-co2,owid-cons}.}{tradegap}
+
+\section{The same question, worldwide}
+
+Global fossil carbon dioxide emissions reached a record 38.1 billion tonnes in
+2025, with a further 4.1 billion from deforestation and other land-use change
+\cite{gcb2025,gcb-essd}. Divided by population that is 4.73 tonnes of CO$_2$ per
+person, or 6.67 tonnes once all greenhouse gases are counted
+\cite{owid-co2,owid-ghg}.
+
+The spread between countries is about a factor of twenty. Qatar emits 41.3 tonnes
+per person, the United States 14.2, China 8.7, Germany 6.8, France 4.0 and India
+2.2 \cite{owid-co2}. France sits at little more than half the German figure while
+being a comparably wealthy country, almost entirely because of how it generates
+electricity — a reminder of how much of a national footprint is decided by
+infrastructure rather than by behaviour.
+
+\fig{f4-countries}{Emissions produced inside a country against emissions caused by
+its consumption, 2023. Rich countries import more embodied emissions than they
+export; manufacturing economies do the reverse. Data: \cite{owid-co2,owid-cons}.}{countries}
+
+Country averages, though, hide a spread that is now larger than the spread between
+countries. In 2019 the poorest half of humanity accounted for 12 per cent of global
+emissions and the richest tenth for 48 per cent. Since 1990 the poorest half has
+been responsible for 16 per cent of the growth in emissions and the richest one per
+cent for 23 per cent. Most striking for how footprints are usually measured: the
+bulk of the top percentile's emissions comes from what they own and invest in
+rather than from what they consume \cite{chancel}.
+
+\fig{f5-inequality}{Shares of global greenhouse gas emissions by global income
+group, 2019. The multiplier is each group's share of emissions divided by its share
+of people. Data: Chancel (2022) \cite{chancel}.}{inequality}
+
+That last point has a direct consequence. A calculator that asks about flights,
+heating and diet measures consumption. For most people consumption is the dominant
+term and the answer is close to right. For the top of the distribution it is not,
+and the group with the largest footprint is the one such a calculator understates
+most.
+
+\section{What sits inside a personal footprint}
+
+The 10.4-tonne figure is the trade-corrected one — the fourth bar in
+Figure~\ref{fig:four}, the number a consumer calculator reports. It is worth being
+explicit about how it is built, because two quite different procedures are at work
+inside it and neither is the one people usually assume.
+
+For the parts a person can report about themselves, the calculation runs
+\textbf{bottom-up}: kilometres driven, litres of heating oil, kilowatt-hours of
+electricity, flights taken, each multiplied by an emission factor. For the parts
+nobody can report — the emissions behind a shirt, a restaurant meal, a hospital —
+it runs \textbf{top-down}: national totals for that sector, divided by the
+population, then scaled up or down by what the person says about their habits. Food,
+general consumption and public infrastructure are computed this way, as are the base
+loads inside housing and mobility \cite{uba-rechner}. Section~5 explains where those
+national totals come from.
+
+So the answer to \enquote{is this per-product or is it the country divided by
+people?} is: both, in different categories. Nobody adds up the individual products
+they bought, because the data to do that does not exist. What varies with a person's
+answers is how far above or below the national average each category lands.
+
+The six categories the calculator uses are where most of the interpretation happens,
+and few of them are where intuition puts them.
+
+\fig{f1-breakdown}{The average German footprint by category. The notes state what
+each one contains. Sources: \cite{greenpeace,uba-rechner}.}{breakdown}
+
+The largest single category is not heating and not driving. It is everything else
+bought — clothes, electronics, furniture, services — together with the machines and
+factory buildings that produced all of it. Housing comes second and means heating
+and hot water, plus renting and renovation work. Household electricity is a
+separate and surprisingly small category at half a tonne, which is the honest
+reason a green tariff moves a personal total less than people expect. Published
+savings figures for switching to renewable electricity are larger than this entire
+category, for a reason Section~7.1 takes up.
+
+Mobility counts private travel only. A train taken to a client meeting is not in
+it; that emission is treated as business activity and reappears inside the
+consumption category. Food includes a proportional share of restaurants and
+canteens and excludes pet food, which also lands in consumption \cite{uba-rechner}.
+
+The last category is the one no user input can change. Public infrastructure, 1.2
+tonnes, is an equal share of the state itself: administration, health, education,
+water supply, waste disposal, and the construction of roads, railways, bridges and
+tunnels \cite{uba-rechner}. It sits underneath every resident regardless of how
+they live, and it is larger than the entire long-run target discussed in
+Section~7.
+
+\section{How a footprint is actually calculated}
+
+Two methods produce these numbers, and knowing which one produced a figure explains
+most of the disagreements between published sources.
+
+\subsection{Following the supply chain, and where it stops}
+
+The first method traces a product backwards step by step: cotton, spinning, dyeing,
+sewing, shipping. It is precise about what it includes, and it has to stop
+somewhere. Raw materials, process energy, direct emissions, packaging and transport
+are normally inside. The factory building, the machines, the administrative
+overhead and staff commuting are normally outside — commuting because it belongs to
+the organisation rather than to the product, the rest because allocating a
+thirty-year building across millions of units requires assumptions that are hard to
+defend.
+
+The cost of stopping is measurable. Comparing traced inventories against
+whole-economy ones showed that this method systematically underestimates, in some
+product systems by half or more \cite{lenzen2000}, and a group of the field's
+practitioners argued that where a study draws its boundary is not decided on
+scientific grounds at all \cite{suh2004}. The commonly cited range is a 20 to 50
+per cent shortfall, and it is a shortfall rather than noise: the error only ever
+points one way.
+
+Standards handle this differently, which is why two figures for one product can
+legitimately disagree. PAS~2050 leaves capital goods out by default
+\cite{pas2050}; the European Product Environmental Footprint method requires them
+\cite{pef}. For company reporting the Greenhouse Gas Protocol requires them and is
+strict about when: \enquote{companies should not depreciate, discount, or amortize
+the emissions from the production of capital goods over time} — a machine's full
+manufacturing emissions are booked in the year it is bought, not spread across its
+working life \cite{ghgp-scope3}.
+
+\subsection{Working from the whole economy instead}
+
+The second method starts from national accounts — the tables recording which
+industries buy what from which other industries — and traces emissions through all
+of them. Nothing is cut off, because every purchase any company ever made is
+recorded somewhere. This is what stands behind the German calculator, which builds
+its sector averages from a model of 182 product groups \cite{uba-rechner}.
+
+The published worked example shows what that captures. German demand for research
+and development in 2020 came to 110.5 billion euros and carried 8.75 million tonnes
+of CO$_2$e, an intensity of 79 kilograms per thousand euros spent. Conferences those
+institutions hosted and business trips their staff took are inside that figure, as
+inputs bought from the hospitality and transport sectors \cite{uba-rechner}. Nothing
+has to be added by hand; the supply chain is already in the matrix.
+
+The price of that completeness is bluntness. The same report notes that research
+needing a laboratory and research needing a desk carry the same coefficient
+\cite{uba-rechner}. Within a category everything is treated as identical.
+
+Three further properties of this particular model bound what its numbers can
+support. Imported goods are assumed to have been made as cleanly as domestic ones,
+which understates exactly those sectors that have moved abroad. Emissions from land
+use and deforestation are excluded — as are, in exchange, the sinks from
+reforestation. And the data runs two to three years behind the year on the label
+\cite{uba-rechner}.
+
+\subsection{The factory question}
+
+Whether the factory that made a product is counted therefore has a specific answer
+that depends on the method, and in the whole-economy method the answer is yes with
+a qualification.
+
+German investment in machines, equipment, vehicles and non-residential buildings
+came to roughly 153 million tonnes of CO$_2$e in 2021. Civil engineering is assigned
+to public infrastructure, residential construction to housing, and the majority
+stays inside general consumption on the reasoning that machinery and industrial
+buildings exist in order to produce consumer goods. Splitting it further onto
+individual products is stated to be impossible with the data that exists
+\cite{uba-rechner}.
+
+So the factory is in the number, but it is spread across the whole shopping basket
+rather than attached to the item bought.
+
+\subsection{Green electricity}
+
+The claim that renewable electricity makes an electricity footprint zero is a
+boundary question rather than a factual one. Company reporting rules require both
+figures to be published: one using the average emissions of the physical grid, and
+one derived from what was actually contracted, such as a supplier tariff or a
+renewable certificate \cite{ghgp-scope2}.
+
+The contracted figure can legitimately be close to zero. What it does not establish
+is that the purchase caused additional renewable generation to exist — the rules
+allocate existing generation to whoever contracted it and do not require the
+certificate to be additional. Two customers can therefore both lower their reported
+figure while total grid emissions are unchanged.
+
+The German calculator handles the closest analogous case more conservatively.
+Electricity a household generates and feeds into the grid is credited as an
+avoidance \emph{at other people}, calculated against the fossil generation it
+displaces, and is reported on a separate line rather than subtracted from the
+household's own footprint \cite{uba-rechner}.
+
+\section{The ecological footprint, and what it is made of}
+
+Each component of the ecological footprint is consumption divided by a world-average
+yield, converted into global hectares. Biocapacity is the matching supply figure:
+area, adjusted for how productive that country's land of that type is
+\cite{gfn-data}.
+
+The carbon component works differently from the other five. Emissions are reduced by
+the share the oceans absorb, and what remains is divided by the rate at which
+world-average forest absorbs carbon, producing an area of forest that would be
+needed but does not exist.
+
+That component dominates the result. For Germany in 2023 — the last measured year in
+the current accounts — the footprint of consumption was 4.03 global hectares per
+person against a domestic biocapacity of 1.59. Carbon accounted for 2.43 of those
+4.03, about 60 per cent. Cropland contributed 0.79, forest products 0.39, built-up
+land 0.19, grazing land 0.17 and fishing grounds 0.05 \cite{gfn-data}.
+
+\fig{f6-ef-germany}{Germany's ecological footprint by component since 1961, against
+its own biocapacity. Almost all of the movement is the carbon layer at the bottom.
+Data: Global Footprint Network and York University \cite{gfn-data}.}{efde}
+
+Remove the carbon layer and what remains — 1.60 global hectares — is close to what
+Germany's own land and sea regenerate. The five non-carbon components together have
+barely moved in six decades.
+
+Worldwide the same accounts give 2.51 global hectares of demand per person for 2025
+against 1.48 available, a ratio of 1.70 that is the origin of the \enquote{1.7
+Earths} figure. Demand first exceeded supply around 1970 and has not returned since
+\cite{gfn-data}.
+
+\fig{f7-earths}{World ecological footprint and biocapacity per person. Biocapacity
+falls steadily because population grows faster than productive area. Data:
+\cite{gfn-data}.}{earths}
+
+Earth Overshoot Day — the date on which cumulative demand equals the year's
+biocapacity — falls on 30 July 2026 \cite{eod-past}. Germany's own date, meaning
+the date the world would reach if everyone consumed like a German resident, is 10
+May \cite{eod-country}.
+
+\fig{f8-overshoot}{Earth Overshoot Day since 1972, recalculated on one consistent
+method. Data: \cite{eod-past}.}{overshoot}
+
+Two properties of these dates are easy to misread. The whole series is recalculated
+every year, so a date published in an earlier year will not match the current one.
+When the 2026 accounts revised the ocean's carbon uptake upward, the date moved
+eight days later, while genuine deterioration moved it two days earlier — a net six
+days later than the previous estimate, in a year the accounts themselves describe
+as the highest overshoot ever recorded \cite{eod-past}. A later date can mean a
+better model rather than a better world. For the same reason, per-person hectare
+figures quoted from different editions will not agree, and a comparison across
+sources has to check which edition each number came from.
+
+\subsection{The case against the metric, and what survives it}
+
+The ecological footprint has been criticised in the peer-reviewed literature for two
+decades, and the central criticism is arithmetic rather than rhetorical.
+
+\textbf{The headline claim is narrower than it sounds.} \enquote{Humanity uses 1.7
+Earths} invites the reading that we are consuming farmland, forests and fisheries at
+1.7 times the rate they regrow. Break the number apart and that is not what it says.
+Blomqvist and colleagues showed that none of the five non-carbon categories runs a
+substantial deficit — cropland demand roughly matches cropland supply, fishing roughly
+matches fish, and so on. Essentially all of the measured overshoot is the carbon
+component \cite{blomqvist}. The real claim is \enquote{we emit more CO$_2$ than
+forests absorb}, which is true, important, and already measurable in tonnes.
+
+\textbf{The hectares in that component do not exist, and how many there are is a
+choice.} The carbon term is the forest area that \emph{would be} needed to absorb the
+emissions. No such forest is planted; it is a unit conversion. How large it comes out
+depends on an assumed rate at which a hectare of forest takes up carbon, and on how
+much the oceans are assumed to absorb first. Neither is a measurement of what
+happened. Giampietro and Saltelli made this the core of their objection: the result
+swings with assumptions that cannot be pinned down, while the supply figure it is
+compared against is built with the same machinery \cite{giampietro}. The 2026 revision
+described above is the effect in practice — an updated ocean figure moved Earth
+Overshoot Day more than reality did.
+
+\textbf{The conversion licenses a conclusion nobody intends.} Because emissions enter
+as \enquote{forest area required}, the arithmetic says global overshoot could be
+closed by planting enough fast-growing trees, with emissions unchanged. The atmosphere
+does not work that way; it responds to tonnes. A metric that can be satisfied without
+the physical problem improving is doing something odd with its unit.
+
+\textbf{Adding unlike things together loses the information.} Cropland, fish and
+carbon are summed into one figure in hectares, so a rise in one can mask a fall in
+another and the total points at no particular action. Van den Bergh and Grazi argued
+on this basis that the aggregate offers nothing usable for policy \cite{vandenbergh}.
+
+Blomqvist and colleagues concluded that the metric as constructed is \enquote{so
+misleading as to preclude their use in any serious science or policy context}
+\cite{blomqvist}.
+
+Rees and Wackernagel replied that the metric answers one specific question — how much
+biocapacity does a population use against how much is available — and is being judged
+against a standard it never claimed to meet. The carbon share, they argued, reflects
+the real dominance of fossil fuels rather than a modelling artefact \cite{rees}. The
+Global Footprint Network's own limitations note concedes that the metric does not
+measure pollution, biodiversity or water, and works best inside a set of indicators
+rather than alone \cite{gfn-limits}.
+
+Both positions are correct about different things, which points to a division of
+labour rather than a winner. To show a general audience in one number that
+consumption exceeds what the planet regenerates, the area framing and Overshoot Day
+do work that a tonnage cannot. To choose between two courses of action, the
+conversion to area adds an assumption without adding information, and the
+sensitivity of that assumption is larger than the differences being weighed.
+
+\section{What one person can change, and what they cannot}
+
+Two systematic reviews have measured the size of individual actions. A synthesis of
+53 studies covering 771 options found the largest ones in transport — living without
+a car, switching to an electric vehicle, dropping one long return flight, each above
+1.7 tonnes a year — followed by renewable electricity at 1.6 tonnes, home
+refurbishment at 0.9 and a vegan diet at 0.8 \cite{ivanova}. An earlier review of 148
+scenarios put living car-free at 2.4 tonnes a year, avoiding one transatlantic return
+flight at 1.6 and a plant-based diet at 0.8 — four times more than comprehensive
+recycling and eight times more than changing lightbulbs \cite{wynes}.
+
+\fig{f9-levers}{What each of the largest private actions is worth per year. Grey
+marks the two actions public campaigns push hardest. Sources: \cite{ivanova,wynes}.}{levers}
+
+\subsection{The ranking is a population ranking, not a personal one}
+
+Every figure in that chart is a median across studies, measured against an
+average-emitting baseline. That makes the ordering correct for a population and
+unreliable for any particular person, because \textbf{the saving an action offers is
+capped by what that person already emits in the category.} Living car-free is worth
+2.4 tonnes to someone who drives an average distance and nothing at all to someone
+who has no car. Ivanova and co-authors treat this explicitly, modelling geographical,
+technical and socio-demographic context as a determinant of how much any option
+delivers \cite{ivanova}.
+
+The chart in front of this section contains its own example. Switching to renewable
+electricity appears there at 1.6 tonnes — a median across studies from countries where
+household electricity is a much larger share of the footprint than it is in Germany,
+and where in several cases electricity also supplies the heating. A German resident's
+entire household electricity category is 0.5 tonnes (Section~4). A saving cannot
+exceed the category it comes out of, so 0.5 is the ceiling on what that switch can
+deliver there, whatever the median says.
+
+The effect is large enough to reorder the list. For a person without a car the
+chart's biggest item is worth nothing at all, which moves it from first place to
+last. Diet shows the same dependence in a milder form: measured against one
+consistent set of diets, the move from a medium meat-eater to a vegan is worth about
+1.7 tonnes a year, while the move from a vegetarian to a vegan is worth about 0.6 —
+7.04, 4.16 and 2.47\,kg CO$_2$e per 2000\,kcal respectively, annualised
+\cite{scarborough}. Same action, two starting points, a factor of nearly three
+between them.
+
+For a German reader the diet step can be sized directly, and against something people
+have an intuition for. The calculator puts the average German food footprint at 1.6
+tonnes a year (Section~4), and the environment agency estimates that moving from the
+average German diet to a vegan one cuts diet-related emissions by 38 to 52 per cent
+\cite{uba-tierhaltung}. Combining the two gives roughly 0.6 to 0.8 tonnes a year. A
+return flight inside Europe of about 1000 kilometres each way — Frankfurt to
+Barcelona, Berlin to Rome — is some 2000 passenger-kilometres, and German aviation
+data puts short-haul economy travel at 195 grams of CO$_2$e per passenger-kilometre
+once non-CO$_2$ effects and fuel supply are counted \cite{ifeu}, so about 0.4 tonnes.
+Giving up animal products for a year is therefore worth somewhere between one and a
+half and two such flights. Neither side of that comparison includes emissions from
+land-use change, which the calculator omits throughout and which is the larger
+omission on the food side \cite{uba-rechner}.
+
+So the published ordering describes a population, and which lever is largest for a
+given person depends on where that person already stands. A generic ranking names the
+categories that are usually large; only a personal baseline shows which of them still
+has room left in it.
+
+\subsection{Why the widely quoted child figure is missing from that chart}
+
+The same review lists a fifth action far above the others — having one fewer child, at
+58.6 tonnes a year \cite{wynes}. It is absent from the chart because it is a different
+kind of quantity from the rest, not simply a larger one.
+
+The study underneath it computes a lifetime carbon legacy: under current conditions in
+the United States, each child adds about 9441 tonnes of CO$_2$ to an average woman's
+legacy, which is 5.7 times her own lifetime emissions \cite{murtaugh}. Of that, half
+of a child's emissions are assigned to each parent, a quarter of the grandchildren's,
+and so on down the family tree \cite{wynes}. Three things follow. It is a lifetime sum
+presented on an annual axis, where every other figure here is a saving that recurs
+each year. The child is charged its own emissions again once grown, so the same tonne
+sits in two ledgers, where every other figure here belongs to one person only. And it
+holds emission rates at today's level for as long as the family tree runs, which is
+the opposite of what the targets the literature exists to serve assume. None of this
+touches the four findings above, which are ordinary annual savings measured the
+ordinary way.
+
+Adding the realistic levers together, allowing for the overlap between them and for
+the ceilings just described, gets somewhere around five to seven tonnes off a
+10.4-tonne starting point. The total is indicative rather than exact — it is assembled
+from cross-country medians, and the German ceiling on one of its terms alone moves it
+by a tonne. The conclusion survives that imprecision comfortably: it is a substantial
+change in how a person lives, and it still does not reach the target.
+
+The target itself is not a single published constant. Germany's environment agency
+states that no exact value can be derived, because it depends on population growth
+and on how many carbon sinks can be built, but that it must lie well below one tonne
+per person per year for net zero to work — and that reaching it requires cutting more
+than 90 per cent from today's level \cite{uba-frage}. An independent check gives the
+same order of magnitude: 170 billion tonnes of CO$_2$ remain in the budget for 1.5
+degrees \cite{gcb2025}, which across roughly 8.2 billion people is about 21 tonnes
+each in total — under five years at the current German rate.
+
+What is left after the private levers are exhausted is the electricity grid, the
+building stock, the railways, the freight system and industrial process heat. None of
+those is a consumption decision. The 1.2-tonne public share is not reachable by any
+of them either.
+
+\section{The handprint}
+
+The handprint answers the question that follows directly: if most of the remaining
+gap is structural, what is one person supposed to do about it?
+
+It counts what someone changes at other people. Persuading a landlord to insulate a
+building cuts emissions for every household in it. Getting an employer to put solar
+on the roof, or a council to change a bus route, moves far more than any private
+decision. None of it appears in a personal footprint, which by construction only
+counts what passes through one person's own life. The concept originated at the
+Centre for Environment Education in India and was developed in Germany by Germanwatch
+with Brot für die Welt, who frame it as helping people \enquote{shape social and
+political change in their environment and thus change structural conditions in the
+long term} \cite{germanwatch,handabdruck}. Its corporate equivalent, avoided
+emissions, is defined as the difference a low-carbon product makes against a scenario
+without it, and is explicitly positioned as sitting outside a company's own emissions
+inventory \cite{wbcsd}.
+
+The property that makes the concept work is also the one that limits it, and it is
+easiest to see with numbers.
+
+Take a block of ten flats. One tenant spends a year pushing the landlord into
+insulating it, and afterwards the building burns half a tonne less CO$_2$e per flat
+per year. Five tonnes are genuinely avoided.
+
+On the footprint side the bookkeeping is clean. Each of the ten residents now heats
+with less gas, so each of their personal footprints falls by 0.5 tonnes. Ten times
+0.5 is 5, which is exactly what was avoided. Nothing is missing and nothing is
+counted twice — that is what a footprint is: every real tonne assigned to exactly one
+person, totals matching reality.
+
+On the handprint side the tenant who organised it claims 5 tonnes, and that claim is
+honest too. Without them the insulation does not happen and none of the five tonnes
+is avoided.
+
+Now add the two together and you get 10 tonnes from an event that saved 5. The
+tenant's own footprint also fell by 0.5, and that half-tonne now appears both in
+their footprint and inside their handprint. None of this is an error. The two numbers
+answer different questions — \emph{how much do I cause?} and \emph{how much did I
+change?} — and the second question cannot be answered without letting several people
+take credit for the same tonne.
+
+\begin{keybox}
+The footprint concept assigns all of a population's emissions to individuals without
+overlap. The handprint cannot: avoidance achieved at other people cannot be assigned
+unambiguously to one actor and may be claimed by several at once, so the sum of all
+handprints can exceed the emissions that actually exist. Double counting is excluded
+from the footprint by construction and is inherent to the handprint — which is not a
+problem as long as the two are reported separately \cite{uba-rechner}.
+\end{keybox}
+
+The rule that follows is hard: a handprint may be reported beside a footprint and
+never subtracted from it. The German calculator is built accordingly and quantifies
+only three cases — electricity fed into the grid, donations to climate projects, and
+climate-directed investments. A compensated flight still appears at full weight under
+mobility, with the compensation shown separately and negatively \cite{uba-rechner}.
+
+Once that split is clear, a large class of public claims sorts itself out.
+\enquote{Our product saved four million tonnes} is a handprint claim and says nothing
+about what the company emits. \enquote{We cut our emissions by four million tonnes}
+is a footprint claim and can be checked against a balance that has to add up. Claims
+that slide between the two are the standard shape of greenwashing, which is why the
+corporate guidance treats separate reporting as a condition of credibility
+\cite{wbcsd}.
+
+\section{Where the idea came from}
+
+A recurring argument holds that the personal carbon footprint is a public relations
+construct and should be distrusted on that basis. The documented facts support part
+of it. BP hired the advertising agency Ogilvy \& Mather, ran an award-winning
+campaign from 2000, and launched a personal carbon footprint calculator in 2004
+aimed at showing individuals how their daily life drives warming \cite{mashable}.
+
+Two corrections matter. The term predates the campaign: the earliest use recorded by
+the Oxford English Dictionary is a 1999 issue of a BBC vegetarian cooking magazine,
+and the term became Oxford's word of the year in 2007 \cite{euronews}. The accounting
+predates it by longer — the ecological footprint dates from the early 1990s
+\cite{gfn-data}, and trade-corrected emission accounting is a standard application of
+input-output analysis, a technique from national statistics.
+
+Where a word came from is not evidence about whether a measurement works. A
+statistical office computing consumption-based emissions performs the same arithmetic
+regardless of who once found the vocabulary convenient. What the objection does get
+right is the framing effect: a personal footprint presented without context invites
+the conclusion that the sum of private choices is the solution, and Section~7 puts
+that at roughly half. The response that follows is to keep the measurement and fix
+the framing, which is what the handprint was constructed to do.
+
+\section{Which metric answers which question}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Every row is a legitimate metric. The failure mode is using one to answer
+another's question.}
+\vspace{2pt}
+\begin{tabularx}{\linewidth}{@{}p{3.4cm}p{2.3cm}X@{}}
+\toprule
+\textbf{Question} & \textbf{Metric} & \textbf{Why, and what it cannot do} \\
+\midrule
+Is a country meeting its legal target? & Territorial, t\,CO$_2$e & The basis of national inventories and climate law. Ignores trade entirely. \\
+\addlinespace[2pt]
+How much warming does a population's consumption cause? & Consumption-based, t\,CO$_2$e & Nets out exports, adds imports. Runs two to three years behind and inherits the bluntness of whole-economy methods. \\
+\addlinespace[2pt]
+Which of two products is better? & Product footprint, t\,CO$_2$e & Comparable only if boundary, standard and method match. Traced figures are biased low. \\
+\addlinespace[2pt]
+Where should one household act first? & Consumer calculator, t\,CO$_2$e & Ranks private levers correctly. Contains a floor it cannot address and understates high-wealth emitters. \\
+\addlinespace[2pt]
+Does humanity exceed what the planet regenerates? & Ecological footprint, gha & Communicates overshoot in one figure. Dominated by its carbon term; unsuitable for ranking options. \\
+\addlinespace[2pt]
+What did an action change beyond the actor? & Handprint & Captures structural leverage. Never summed, never netted against a footprint. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Conclusion}
+
+A footprint figure without its accounting rule is not information. The four German
+numbers span 6.8 to 10.4 tonnes and every one of them is correct. Before comparing
+any two figures, three properties have to be fixed: which gases, which boundary, and
+whether trade is counted. That single habit removes most of the confusion in public
+reporting, and it applies equally to hectare figures quoted from different editions
+of the ecological footprint accounts.
+
+The metric should follow the question rather than the audience. Where a decision
+depends on the answer, tonnes of CO$_2$e with a stated boundary is the defensible
+unit. The ecological footprint earns its place as a way of making overshoot legible
+and loses it as soon as it is asked to rank options, for the reason its critics
+identified and its own accounts confirm: about 60 per cent of it is a carbon number
+in an area unit, and the rest has barely moved in sixty years.
+
+The footprint and the handprint are complements, and the property that makes the
+handprint useful is the same one that makes it unsummable. Reported side by side they
+describe both what a person consumes and what a person changes. Netted against each
+other they describe nothing.
+
+If one practical step follows from all of this: compute a personal footprint once, to
+find the two or three levers that are actually large and to see the size of the floor
+underneath them. That floor is where the remaining majority sits, and it is not
+reachable by consumption decisions at all.
+
+\vspace{10pt}
+\hrule height 0.4pt
+\vspace{4pt}
+{\footnotesize\color{gray}All charts were generated from the primary data files
+accompanying this document. Every source below was retrieved in July 2026. Research
+and drafting were carried out with assistance from Claude (Anthropic); every source
+cited was retrieved and checked against the primary document, and responsibility for
+the content rests with the author.}
+
+\begin{thebibliography}{99}
+\footnotesize
+
+\bibitem{greenpeace} Greenpeace Deutschland. \emph{Ökologischer Fußabdruck und CO$_2$-Fußabdruck -- was uns die Berechnung bringt.} \url{https://www.greenpeace.de/klimaschutz/klimakrise/deutschland-co2-fussabdruck}
+
+\bibitem{uba-thg} Umweltbundesamt. \emph{Treibhausgas-Emissionen in Deutschland}, 2 July 2026. \url{https://www.umweltbundesamt.de/daten/klima/treibhausgas-emissionen-in-deutschland}
+
+\bibitem{uba-ziele} Umweltbundesamt. \emph{Treibhausgasminderungsziele Deutschlands}, 30 June 2026. \url{https://www.umweltbundesamt.de/daten/klima/treibhausgasminderungsziele-deutschlands}
+
+\bibitem{uba-frage} Umweltbundesamt. \emph{Wie hoch sind die Treibhausgasemissionen pro Person in Deutschland und wie viel wäre klimaverträglich?} \url{https://www.umweltbundesamt.de/service/uba-fragen/wie-hoch-sind-die-treibhausgasemissionen-pro-person}
+
+\bibitem{uba-rechner} Schunkert, S., Siewert, J., Pitz, P., Paar, A., Hertle, H., Berg, F., Dittrich, M., Dingeldey, M. \emph{Der UBA-CO$_2$-Rechner für Privatpersonen -- Hintergrundinformationen.} Umweltbundesamt, TEXTE 19/2025. \url{https://www.umweltbundesamt.de/system/files/medien/11850/publikationen/19_2025_texte.pdf}
+
+\bibitem{destatis-pop} Statistisches Bundesamt. \emph{Bevölkerung Deutschlands sinkt im Jahr 2025 um 0,1\,\%.} \url{https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/01/PD26_032_124.html}
+
+\bibitem{owid-co2} Our World in Data, from the Global Carbon Project. \emph{CO$_2$ emissions per capita.} \url{https://ourworldindata.org/grapher/co2-emissions-per-capita}
+
+\bibitem{owid-cons} Our World in Data, from the Global Carbon Project. \emph{Per capita consumption-based CO$_2$ emissions.} \url{https://ourworldindata.org/grapher/consumption-co2-per-capita}
+
+\bibitem{owid-ghg} Our World in Data. \emph{Per capita greenhouse gas emissions including land use.} \url{https://ourworldindata.org/grapher/per-capita-ghg-emissions}
+
+\bibitem{gcb2025} Global Carbon Project. \emph{Fossil fuel CO$_2$ emissions hit record high in 2025}, 13 November 2025. \url{https://globalcarbonbudget.org/fossil-fuel-co2-emissions-hit-record-high-in-2025/}
+
+\bibitem{gcb-essd} Friedlingstein, P. et al. \emph{Global Carbon Budget 2025.} Earth System Science Data 18, 3211. \url{https://essd.copernicus.org/articles/18/3211/2026/}
+
+\bibitem{gfn-data} Global Footprint Network and York University Ecological Footprint Initiative. \emph{Footprint Data Platform}, National Footprint and Biocapacity Accounts, 2026 edition. \url{https://data.footprintnetwork.org/}
+
+\bibitem{eod-past} Global Footprint Network. \emph{Past Earth Overshoot Days.} \url{https://www.overshootday.org/newsroom/past-earth-overshoot-days/}
+
+\bibitem{eod-country} Global Footprint Network. \emph{Country Overshoot Days 2026.} \url{https://www.overshootday.org/newsroom/country-overshoot-days/}
+
+\bibitem{blomqvist} Blomqvist, L., Brook, B.W., Ellis, E.C., Kareiva, P.M., Nordhaus, T., Shellenberger, M. \emph{Does the Shoe Fit? Real versus Imagined Ecological Footprints.} PLOS Biology 11(11): e1001700, 2013. \url{https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001700}
+
+\bibitem{rees} Rees, W.E., Wackernagel, M. \emph{The Shoe Fits, but the Footprint is Larger than Earth.} PLOS Biology 11(11): e1001701, 2013. \url{https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001701}
+
+\bibitem{vandenbergh} van den Bergh, J.C.J.M., Grazi, F. \emph{Ecological Footprint Policy? Land Use as an Environmental Indicator.} Journal of Industrial Ecology 18(1), 10--19, 2014. \url{https://doi.org/10.1111/jiec.12045}
+
+\bibitem{giampietro} Giampietro, M., Saltelli, A. \emph{Footprints to nowhere.} Ecological Indicators 46, 610--621, 2014. \url{https://doi.org/10.1016/j.ecolind.2014.01.030}
+
+\bibitem{gfn-limits} Global Footprint Network. \emph{Ecological Footprint: Limitations and Criticism.} \url{https://www.footprintnetwork.org/content/uploads/2020/12/Footprint-Limitations-and-Criticism.pdf}
+
+\bibitem{chancel} Chancel, L. \emph{Global carbon inequality over 1990--2019.} Nature Sustainability 5, 931--938, 2022. \url{https://www.nature.com/articles/s41893-022-00955-z}
+
+\bibitem{wynes} Wynes, S., Nicholas, K.A. \emph{The climate mitigation gap: education and government recommendations miss the most effective individual actions.} Environmental Research Letters 12(7), 074024, 2017. \url{https://doi.org/10.1088/1748-9326/aa7541}
+
+\bibitem{ivanova} Ivanova, D. et al. \emph{Quantifying the potential for climate change mitigation of consumption options.} Environmental Research Letters 15(9), 093001, 2020. \url{https://doi.org/10.1088/1748-9326/ab8589}
+
+\bibitem{scarborough} Scarborough, P. et al. \emph{Vegans, vegetarians, fish-eaters and meat-eaters in the UK show discrepant environmental impacts.} Nature Food 4, 565--574, 2023. \url{https://www.nature.com/articles/s43016-023-00795-w}
+
+\bibitem{murtaugh} Murtaugh, P.A., Schlax, M.G. \emph{Reproduction and the carbon legacies of individuals.} Global Environmental Change 19(1), 14--20, 2009. \url{https://doi.org/10.1016/j.gloenvcha.2008.10.007}
+
+\bibitem{uba-tierhaltung} Umweltbundesamt. \emph{Fragen und Antworten zu Tierhaltung und Ernährung.} \url{https://www.umweltbundesamt.de/themen/landwirtschaft/landwirtschaft-umweltfreundlich-gestalten/fragen-antworten-zu-tierhaltung-ernaehrung}
+
+\bibitem{ifeu} Allekotte, M., Kräck, J., Kämper, C. \emph{Harmonized GHG Emission Factors for Air Travel in Germany.} ifeu paper 01/2026, Heidelberg. \url{https://doi.org/10.5281/zenodo.19208116}
+
+\bibitem{germanwatch} Germanwatch e.V. \emph{The Handprint Concept. Changing Structures towards Sustainability}, 2024. \url{https://www.germanwatch.org/en/90288}
+
+\bibitem{handabdruck} Germanwatch and Brot für die Welt. \emph{Handabdruck.} \url{https://www.handabdruck.eu/}
+
+\bibitem{wbcsd} World Business Council for Sustainable Development. \emph{Guidance on Avoided Emissions v2.0}, 24 July 2025. \url{https://www.wbcsd.org/resources/guidance-on-avoided-emissions/}
+
+\bibitem{iso14040} ISO 14040:2006. \emph{Environmental management -- Life cycle assessment -- Principles and framework.} \url{https://www.iso.org/standard/37456.html}
+
+\bibitem{iso14044} ISO 14044:2006. \emph{Environmental management -- Life cycle assessment -- Requirements and guidelines.} \url{https://www.iso.org/standard/38498.html}
+
+\bibitem{iso14067} ISO 14067:2018. \emph{Greenhouse gases -- Carbon footprint of products -- Requirements and guidelines for quantification.} \url{https://www.iso.org/standard/71206.html}
+
+\bibitem{pas2050} BSI. \emph{PAS 2050:2011 -- Specification for the assessment of the life cycle greenhouse gas emissions of goods and services.} \url{https://knowledge.bsigroup.com/products/specification-for-the-assessment-of-the-life-cycle-greenhouse-gas-emissions-of-goods-and-services}
+
+\bibitem{pef} Commission Recommendation (EU) 2021/2279 on the use of the Environmental Footprint methods. \url{https://eur-lex.europa.eu/eli/reco/2021/2279/oj}
+
+\bibitem{ghgp-scope3} WRI and WBCSD Greenhouse Gas Protocol. \emph{Technical Guidance for Calculating Scope 3 Emissions}, Category 2: Capital Goods. \url{https://ghgprotocol.org/sites/default/files/standards/Scope3_Calculation_Guidance_0.pdf}
+
+\bibitem{ghgp-scope2} Greenhouse Gas Protocol. \emph{Top Ten Questions about the Scope 2 Guidance.} \url{https://ghgprotocol.org/blog/top-ten-questions-about-scope-2-guidance}
+
+\bibitem{lenzen2000} Lenzen, M. \emph{Errors in Conventional and Input-Output-based Life-Cycle Inventories.} Journal of Industrial Ecology 4(4), 127--148, 2000. \url{https://doi.org/10.1162/10881980052541981}
+
+\bibitem{suh2004} Suh, S. et al. \emph{System Boundary Selection in Life-Cycle Inventories Using Hybrid Approaches.} Environmental Science \& Technology 38(3), 657--664, 2004. \url{https://doi.org/10.1021/es0263745}
+
+\bibitem{mashable} Kaufman, M. \emph{The carbon footprint sham.} Mashable, 13 July 2020. \url{https://mashable.com/feature/carbon-footprint-pr-campaign-sham}
+
+\bibitem{euronews} Euronews Green. \emph{25 years counting `carbon footprints': Experts assess the term beloved by oil firms}, 9 November 2024. \url{https://www.euronews.com/2024/11/09/25-years-counting-carbon-footprints-experts-assess-the-term-beloved-by-oil-firms}
+
+\end{thebibliography}
+
+\end{document}
