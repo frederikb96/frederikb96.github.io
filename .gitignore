@@ -10,3 +10,6 @@ _site/
 !footprints-and-handprints/footprints-and-handprints.pdf
 !footprints-and-handprints/figures/*.pdf
 !complete-food-and-home-cooking/complete-food-and-home-cooking.pdf
+
+# LaTeX build output
+build/
