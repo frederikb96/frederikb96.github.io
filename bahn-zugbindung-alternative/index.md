@@ -12,9 +12,21 @@ date_published: "2026-09-24"
 alt_lang: en
 alt_url: /bahn-zugbindung-alternative/en/
 meta_line: "Zitiert nach den Beförderungsbedingungen der DB AG, Stand 24.09.2026 · <a href=\"en/\">English version</a>"
+lede: >-
+  **Kurz: nein.** Eine Pflicht, vor dem Umstieg erneut zu prüfen, ob die ursprünglich gebuchte
+  Verbindung wieder erreichbar geworden ist, besteht nicht. Das Recht auf Weiterfahrt mit einem
+  anderen Zug entsteht in dem Moment, in dem die Störung über einen der in den
+  Beförderungsbedingungen genannten Informationskanäle bekanntgemacht wird. Die Fahrplanauskunft
+  der DB und damit der DB Navigator ist dort ausdrücklich genannt. Das Recht entfällt nicht
+  rückwirkend, wenn sich die Lage danach wieder bessert.
+colophon: >-
+  Recherche und Textfassung wurden mit einem KI-Werkzeug erstellt. Alle Zitate wurden gegen die
+  Primärquellen geprüft: die Beförderungsbedingungen im PDF unter
+  [bahn.de/agb](https://www.bahn.de/agb) und die verlinkten FAQ-Seiten. Die Verantwortung für den
+  Inhalt liegt beim Autor. Korrekturen und Hinweise sind willkommen — [Issue im
+  Repository](https://github.com/frederikb96/frederikb96.github.io/issues). Text unter [CC BY
+  4.0](https://creativecommons.org/licenses/by/4.0/).
 ---
-
-<p class="lede"><strong>Kurz: nein.</strong> Eine Pflicht, vor dem Umstieg erneut zu prüfen, ob die ursprünglich gebuchte Verbindung wieder erreichbar geworden ist, besteht nicht. Das Recht auf Weiterfahrt mit einem anderen Zug entsteht in dem Moment, in dem die Störung über einen der in den Beförderungsbedingungen genannten Informationskanäle bekanntgemacht wird. Die Fahrplanauskunft der DB und damit der DB Navigator ist dort ausdrücklich genannt. Das Recht entfällt nicht rückwirkend, wenn sich die Lage danach wieder bessert.</p>
 
 Diese Seite belegt das mit den einschlägigen Klauseln im Wortlaut, damit sie sich im Zug oder gegenüber dem Servicecenter Fahrgastrechte vorzeigen lässt.
 
@@ -41,7 +53,8 @@ Die Frage ist praktisch relevant, weil an ihr hängt, ob die Weiterfahrt im Alte
 Nr. 9.1.1 der Beförderungsbedingungen Personenverkehr:
 
 > Muss vernünftigerweise davon ausgegangen werden, dass der Reisende aufgrund einer Verspätung, eines verpassten Anschlusses oder eines Zugausfalls am Zielbahnhof gemäß Beförderungsvertrag mindestens 20 Minuten verspätet ankommen wird, hat er, auch mit einer zuggebundenen Fahrkarte, gegenüber dem EVU, dass die verspätete oder ausgefallene Beförderung vertraglich schuldet, unverzüglich die Wahl zwischen (i) der Fortsetzung der Fahrt oder der Weiterreise mit geänderter Streckenführung bis zum Zielbahnhof bei nächster Gelegenheit oder (ii) der Fortsetzung der Fahrt oder der Weiterreise mit geänderter Streckenführung bis zum Zielbahnhof zu einem späteren Zeitpunkt. Er kann dabei auch den Zug einer höherwertigen Produktklasse benutzen. Die Benutzung eines reservierungspflichtigen Zuges oder eines Sonderzuges ist allerdings nicht gestattet.
-> <cite>Beförderungsbedingungen der DB AG, BB Personenverkehr Nr. 9.1.1 — <a href="https://www.bahn.de/agb">bahn.de/agb</a></cite>
+>
+> *— Beförderungsbedingungen der DB AG, BB Personenverkehr Nr. 9.1.1 — [bahn.de/agb](https://www.bahn.de/agb)*
 
 Der Anknüpfungspunkt ist die Erwartung, nicht der später eingetretene Verlauf. Das Wahlrecht besteht *unverzüglich*, also im Moment der Kenntnis. Eine Bedingung, unter der es nachträglich wieder entfällt, enthält die Klausel nicht.
 
@@ -50,7 +63,8 @@ Der Anknüpfungspunkt ist die Erwartung, nicht der später eingetretene Verlauf.
 Nr. 9.1.4 bestimmt, wann die Erwartung als begründet gilt:
 
 > Der Reisende kann insbesondere dann vernünftigerweise mit einer Verspätung nach Nr. 9.1.1 und Nr. 9.1.3 am Zielbahnhof rechnen, wenn diese über mindestens einen der nachfolgenden Informationskanäle bekanntgemacht wurde: (i) Aushangfahrpläne und ausgehängte Informationen über Fahrplanänderungen in Bahnhöfen, (ii) elektronische Anzeigen und Lautsprecheransagen in Zügen und auf Bahnhöfen, (iii) Fahrplaninformationen aus Buchungssystemen personalbedienter Verkaufsstellen sowie (iv) verfügbare Fahrplaninformations- und Reisendeninformationsmedien, insbesondere das Fahrplanauskunftssystem im Internet unter www.bahn.de. Die Übergangszeiten für planmäßige Umstiege (Umsteigezeiten) orientieren sich an der elektronischen Fahrplanauskunft unter www.bahn.de.
-> <cite>Beförderungsbedingungen der DB AG, BB Personenverkehr Nr. 9.1.4 — <a href="https://www.bahn.de/agb">bahn.de/agb</a></cite>
+>
+> *— Beförderungsbedingungen der DB AG, BB Personenverkehr Nr. 9.1.4 — [bahn.de/agb](https://www.bahn.de/agb)*
 
 Damit bestimmt die DB die eigene Fahrplanauskunft zum maßgeblichen Informationskanal und die dort hinterlegten Umsteigezeiten zum Maßstab dafür, ob ein Anschluss als erreichbar gilt. Wer sich auf diese Auskunft verlässt, erfüllt genau die Voraussetzung der Klausel. Eine darüber hinausgehende Prüfpflicht des Reisenden ist an keiner Stelle vorgesehen.
 
@@ -59,7 +73,8 @@ Damit bestimmt die DB die eigene Fahrplanauskunft zum maßgeblichen Informations
 Aus der DB-Navigator-FAQ:
 
 > Wichtig: Wenn Sie eine alternative Verbindung auswählen, behalten Sie Ihr ursprüngliches Ticket. Es werden ausschließlich die angezeigten Informationen im Reiseplan und die Benachrichtigungen zur Reise angepasst. Bitte prüfen Sie vorher, ob Ihr Ticket für die ausgewählte Alternative gültig ist.
-> <cite><a href="https://www.bahn.de/faq/pk/service/buchung/navigator/funktionen">bahn.de — DB Navigator, Funktionen</a></cite>
+>
+> *— [bahn.de — DB Navigator, Funktionen](https://www.bahn.de/faq/pk/service/buchung/navigator/funktionen)*
 
 Die Auswahl ist eine Anzeigeeinstellung. Sie begründet keine neue Zugbindung und hebt bestehende Rechte nicht auf. Dass die ursprüngliche Verbindung danach nicht mehr angezeigt wird, ist eine Eigenschaft der App.
 
@@ -68,7 +83,8 @@ Die Auswahl ist eine Anzeigeeinstellung. Sie begründet keine neue Zugbindung un
 Aus der DB-FAQ zur Zugbindung:
 
 > Sie können mit Ihrem ursprünglichen Ticket alle DB Fernverkehrszüge (ICE, IC/EC) und Nahverkehrszüge (RE, RB, IRE, S-Bahnen) nutzen. […] Sie können eine spätere Verbindung Ihrer Wahl nutzen (z.B. später am selben Reisetag, einen Tag später oder auch erst in 3 Wochen. Dies ist bis zu einem Jahr nach ursprünglichem Reisedatum möglich). […] Sie haben freie Wahl der Reiseroute. […] Innerhalb Deutschlands benötigen Sie keine zusätzliche Bescheinigung zur Aufhebung der Zugbindung. […] Hinweis: Bei Fahrkarten mit Zugbindung (z. B. Sparpreisen) ist diese automatisch aufgehoben.
-> <cite><a href="https://www.bahn.de/faq/zugbindung-aufgehoben-bedeutung">bahn.de — In welchen Fällen ist die Zugbindung aufgehoben und was bedeutet das?</a></cite>
+>
+> *— [bahn.de — In welchen Fällen ist die Zugbindung aufgehoben und was bedeutet das?](https://www.bahn.de/faq/zugbindung-aufgehoben-bedeutung)*
 
 Eine Geltungsdauer von bis zu einem Jahr ist mit der Vorstellung schwer vereinbar, die Aufhebung könne noch am selben Reisetag wieder entfallen, sobald der ursprüngliche Zug erneut erreichbar wird.
 
@@ -106,5 +122,3 @@ Die Bewertung stützt sich auf den Wortlaut der Beförderungsbedingungen und der
 Der zugrunde liegende gesetzliche Rahmen ist die Verordnung (EU) 2021/782 über die Rechte und Pflichten der Fahrgäste im Eisenbahnverkehr, auf die Nr. 9.1.2 der Beförderungsbedingungen selbst verweist. Die 20-Minuten-Schwelle für nationale Reisen ist eine vertragliche Regelung der DB und geht über die Verordnung hinaus.
 
 Dies ist keine Rechtsberatung.
-
-<p class="colophon">Recherche und Textfassung wurden mit einem KI-Werkzeug erstellt. Alle Zitate wurden gegen die Primärquellen geprüft: die Beförderungsbedingungen im PDF unter <a href="https://www.bahn.de/agb">bahn.de/agb</a> und die verlinkten FAQ-Seiten. Die Verantwortung für den Inhalt liegt beim Autor. Korrekturen und Hinweise sind willkommen — <a href="https://github.com/frederikb96/frederikb96.github.io/issues">Issue im Repository</a>. Text unter <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>

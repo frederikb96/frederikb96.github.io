@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+
+% pdflatex rather than lualatex: the luaotfload font database is not usable on
+% every machine this builds on, and this stack matches the LaTeX papers.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[$if(babel-lang)$$babel-lang$$else$english$endif$]{babel}
+\usepackage{libertine}
+\usepackage{microtype}
+\usepackage[a4paper,top=2.6cm,bottom=2.6cm,left=2.9cm,right=2.9cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{xurl}
+
+% Characters that appear in prose but not in a T1 text font.
+\usepackage{newunicodechar}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{·}{\textperiodcentered}
+\newunicodechar{→}{$$\rightarrow$$}
+\newunicodechar{…}{\dots}
+
+\definecolor{accent}{HTML}{0072B2}
+\definecolor{quoterule}{HTML}{8A4B16}
+\definecolor{quotebg}{HTML}{F5F5F1}
+
+\hypersetup{colorlinks=true, linkcolor=accent, urlcolor=accent,
+  pdftitle={$title$}, pdfauthor={Frederik Berg}}
+
+\setcounter{secnumdepth}{0}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{17pt plus 3pt minus 2pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt plus 2pt minus 2pt}{4pt}
+
+\setlist[itemize]{leftmargin=1.2em, topsep=3pt, itemsep=3pt, parsep=0pt}
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+\linespread{1.03}
+
+% A quotation is the payload in these documents, so it gets a rule and a tint.
+\renewenvironment{quote}
+  {\begin{tcolorbox}[enhanced,breakable,colback=quotebg,colframe=quotebg,boxrule=0pt,arc=0pt,
+     borderline west={2pt}{0pt}{quoterule},left=10pt,right=10pt,top=8pt,bottom=8pt]\small}
+  {\end{tcolorbox}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries $title$\par}
+\end{center}
+\vspace{1.2em}
+
+$if(lede)$
+{\itshape $lede$\par}
+\vspace{0.6em}
+$endif$
+
+$body$
+
+$if(colophon)$
+\vspace{2em}
+\noindent\rule{\linewidth}{0.4pt}
+
+{\footnotesize $colophon$\par}
+$endif$
+
+\end{document}

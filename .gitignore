@@ -2,3 +2,11 @@
 _site/
 .jekyll-cache/
 .jekyll-metadata
+
+# PDFs rendered from a Markdown document are made on demand, never committed —
+# a committed copy drifts from its source. The LaTeX papers' PDFs are the
+# published artefact and are kept.
+*.pdf
+!footprints-and-handprints/footprints-and-handprints.pdf
+!footprints-and-handprints/figures/*.pdf
+!complete-food-and-home-cooking/complete-food-and-home-cooking.pdf

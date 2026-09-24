@@ -10,9 +10,19 @@ description: >-
   area unit, and why a handprint can never be netted against a footprint.
 date_published: "2026-09-24"
 meta_line: "Whitepaper · <a href=\"footprints-and-handprints.pdf\">Read the paper (PDF)</a>"
+lede: >-
+  A whitepaper on carbon and ecological accounting. It works through why one country has several
+  different and equally correct per-capita footprint figures, how a personal footprint is actually
+  computed, what falls inside a product's system boundary, why the ecological footprint is mostly
+  a carbon number wearing an area unit, and how the handprint differs from the footprint and why
+  the two can never be netted against each other.
+colophon: >-
+  Text and figures under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), the build
+  tooling under MIT. Research and drafting were assisted by an AI tool; every cited source was
+  checked against the primary document, and responsibility for the content rests with the author.
+  Corrections are welcome — [open an
+  issue](https://github.com/frederikb96/frederikb96.github.io/issues).
 ---
-
-<p class="lede">A whitepaper on carbon and ecological accounting. It works through why one country has several different and equally correct per-capita footprint figures, how a personal footprint is actually computed, what falls inside a product's system boundary, why the ecological footprint is mostly a carbon number wearing an area unit, and how the handprint differs from the footprint and why the two can never be netted against each other.</p>
 
 **[Read the paper (PDF)](footprints-and-handprints.pdf)** · [source, data and figure scripts](https://github.com/frederikb96/frederikb96.github.io/tree/main/footprints-and-handprints)
 
@@ -31,5 +41,3 @@ Footprint and biocapacity series by land type for Germany and the world, 1961–
 Every other number carries a citation to the source it came from, and each source was read directly rather than quoted from a search result. Figures are generated from the primary data by a script in the repository rather than drawn by hand, so each one can be traced back to its input.
 
 Charts use the Okabe-Ito categorical palette, checked for colour-vision separation, and carry direct labels so identity never depends on colour alone.
-
-<p class="colophon">Text and figures under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, the build tooling under MIT. Research and drafting were assisted by an AI tool; every cited source was checked against the primary document, and responsibility for the content rests with the author. Corrections are welcome — <a href="https://github.com/frederikb96/frederikb96.github.io/issues">open an issue</a>.</p>

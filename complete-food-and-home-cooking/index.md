@@ -10,9 +10,18 @@ description: >-
   between them, and refinement rather than manufacturing drives the difference.
 date_published: "2026-09-24"
 meta_line: "Whitepaper · <a href=\"complete-food-and-home-cooking.pdf\">Read the paper (PDF)</a>"
+lede: >-
+  A whitepaper comparing the environmental footprint and health evidence of vegan complete foods —
+  powders formulated to be a whole diet, such as Huel, Jimmy Joy and Mana — against a regional,
+  seasonal, whole-food vegan diet in Germany. Both sides are vegan, which holds the largest
+  dietary variable constant and leaves a narrower question: given that someone eats plants, does
+  the form those plants arrive in change anything?
+colophon: >-
+  Text under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Research and drafting were
+  assisted by an AI tool; every cited source was checked against the primary document, and
+  responsibility for the content rests with the author. Corrections are welcome — [open an
+  issue](https://github.com/frederikb96/frederikb96.github.io/issues).
 ---
-
-<p class="lede">A whitepaper comparing the environmental footprint and health evidence of vegan complete foods — powders formulated to be a whole diet, such as Huel, Jimmy Joy and Mana — against a regional, seasonal, whole-food vegan diet in Germany. Both sides are vegan, which holds the largest dietary variable constant and leaves a narrower question: given that someone eats plants, does the form those plants arrive in change anything?</p>
 
 **[Read the paper (PDF)](complete-food-and-home-cooking.pdf)** · [source](https://github.com/frederikb96/frederikb96.github.io/tree/main/complete-food-and-home-cooking)
 
@@ -34,5 +43,3 @@ What drives a complete food's footprint is ingredient refinement rather than man
 Whole foods come from Agribalyse 3.1 via the ADEME data API, cradle-to-shelf, split by life-cycle stage, with seasonal and off-season entries listed separately. Industrial ingredients come from CarbonCloud ClimateHub verified product reports at factory gate, split into agriculture, processing and transport. Measured diet-group footprints come from Scarborough et al. 2023 in Nature Food. Manufacturer sustainability pages were read directly, and every effect size and confidence interval is taken from its primary publication.
 
 Every number was verified against its primary source rather than a search summary.
-
-<p class="colophon">Text under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Research and drafting were assisted by an AI tool; every cited source was checked against the primary document, and responsibility for the content rests with the author. Corrections are welcome — <a href="https://github.com/frederikb96/frederikb96.github.io/issues">open an issue</a>.</p>
